@@ -16,3 +16,10 @@ create_line_plot <- function(x_vector, y_vector, title="", x_label = "", y_label
     scale_x_continuous(breaks = x_vector) +
     labs(title = title, x = x_label, y = y_label)
 }
+
+# funkcja wyświetlająca wykresy
+display_plots <- function(plots_list) {
+  for (plot_object in plots_list) {
+    plot(plot_object)
+  }
+}

@@ -53,6 +53,7 @@ get_all_scalars_for_slots_nums <- function(data_obj, num_slots_values) {
   scalars <- get_scalars(data_obj)
   scalars_mod <- data.frame(
     slots_number = translate_run_names_to_slot_nums(scalars$run, num_slots_values),
+    module = scalars$module,
     name = scalars$name,
     value = scalars$value
   )
@@ -72,21 +73,34 @@ get_values <- function(scalar_data, data_name) {
   return(values_vector)
 }
 
+# funkcja zwraca wektor z wartością wielkości skalarnej o podanej nazwie dla podanego modułu
+#   w pliku wynikowym Omnet++
+get_module_data_value <- function(scalar_data, module_name, data_name) {
+  value_data <- subset(scalar_data, (module == module_name & name == data_name))
+  values_vector <- c(value_data$value)
+  return(values_vector)
+}
+
 # funkcja oblicza statystyki uzyskiwane dla pojedynczej liczby szczelin
 calculate_stats_for_slots_num <- function(scalars, slots_num) {
   scalars_for_slots_num <- get_scalars_for_slots_num(scalars, slots_num)
   packets_sent_values <- get_values(scalars_for_slots_num, "packetSent:count")
   packets_received_values <- get_values(scalars_for_slots_num, "packetReceived:count")
   energy_utilization_values <- get_values(scalars_for_slots_num, "residualEnergyCapacity:last")
+  gate_energy_utilization_value <- get_module_data_value(scalars_for_slots_num,
+                                                      "SimMAC.gateway.energyStorage",
+                                                      "residualEnergyCapacity:last")
   packets_sent_total <- sum(packets_sent_values)
   packets_received_total <- sum(packets_received_values)
   energy_utilization_total <- -1*sum(energy_utilization_values)
+  gate_energy_utilization <- -1*gate_energy_utilization_value[1]
   statistics <- data.frame(
     slots_number = slots_num,
     total_packets_sent = packets_sent_total,
     total_packets_received = packets_received_total,
+    packet_received_ratio = packets_received_total/packets_sent_total,
     total_energy_utilization = energy_utilization_total,
-    packet_received_ratio = packets_received_total/packets_sent_total
+    gateway_energy_utilization = gate_energy_utilization
   )
   return(statistics)
 }
@@ -124,9 +138,10 @@ calculate_LMAC_slots_nums_stats_networks_set <- function(network_sizes,
 #     dla pojedynczej liczby szczelin czasowych
 # wyniki zapisywane są do pliku - ścieżka zapisu określna jest na podstawie podanych argumentóW
 get_stats_for_slots_num <- function(stats_list, slots_num, network_sizes, output_file_path) {
-  slots_num_stats <- data.frame(matrix(ncol = 5, nrow = 0))
+  slots_num_stats <- data.frame(matrix(ncol = 6, nrow = 0))
   col_names <- c("sensors_number", "total_packets_sent", "total_packets_received", 
-                 "total_energy_utilization", "packet_received_ratio")
+                 "packet_received_ratio", "total_energy_utilization",
+                 "gateway_energy_utilization")
   colnames(slots_num_stats) <- col_names
   for (i in 1:length(stats_list)) {
     stats_subset <- subset(stats_list[[i]], (slots_number == slots_num))
@@ -134,8 +149,9 @@ get_stats_for_slots_num <- function(stats_list, slots_num, network_sizes, output
       sensors_number = network_sizes[i],
       total_packets_sent = stats_subset$total_packets_sent,
       total_packets_received = stats_subset$total_packets_received,
+      packet_received_ratio = stats_subset$packet_received_ratio,
       total_energy_utilization = stats_subset$total_energy_utilization,
-      packet_received_ratio = stats_subset$packet_received_ratio
+      gateway_energy_utilization = stats_subset$gateway_energy_utilization
     )
     slots_num_stats <- rbind(slots_num_stats, df)
   }
@@ -158,8 +174,94 @@ get_stats_for_all_slots_nums <- function(slots_nums,
 }
 
 
+# funkcja tworząca obiekty wykresów dla statystyk z podziałem na rozmiary sieci
+create_plots_objects_for_network_sizes <- function(stats_for_networks, network_sizes) {
+  ratio_plots <- list()
+  energy_plots <- list()
+  gateway_energy_plots <- list()
+  sensors_energy_plots <- list()
+  for(i in 1:length(stats_for_networks)) {
+    vec_x <- stats_for_networks[[i]]$slots_number
+    vec_y1 <- stats_for_networks[[i]]$packet_received_ratio * 100
+    x_label <- "liczba szczelin czasowych"
+    y1_label <- "poprawnie dostarczone pakiety [%]"
+    title1 <- paste0("Wykres liczby poprawnie dostarczonych pakietów dla N=", network_sizes[i])
+    vec_y2 <- stats_for_networks[[i]]$total_energy_utilization
+    y2_label <- "sumaryczne zużycie energii [J]"
+    title2 <- paste0("Wykres sumarycznego zużycia energii dla N=", network_sizes[i])
+    vec_y3 <- stats_for_networks[[i]]$gateway_energy_utilization
+    y3_label <- "zużycie energii przez bramę główną [J]"
+    title3 <- paste0("Wykres zużycia energii przez bramę główną dla N=", network_sizes[i])
+    vec_y4 <- stats_for_networks[[i]]$total_energy_utilization - stats_for_networks[[i]]$gateway_energy_utilization
+    y4_label <- "sumaryczne zużycie energii przez sensory [J]"
+    title4 <- paste0("Wykres sumarycznego zużycia energii przez sensory dla N=", network_sizes[i])
+    ratio_plots[[i]] <- create_line_plot(vec_x, vec_y1, title1, x_label, y1_label)
+    energy_plots[[i]] <- create_line_plot(vec_x, vec_y2, title2, x_label, y2_label)
+    gateway_energy_plots[[i]] <- create_line_plot(vec_x, vec_y3, title3, x_label, y3_label)
+    sensors_energy_plots[[i]] <- create_line_plot(vec_x, vec_y4, title4, x_label, y4_label)
+  }
+  result_plots <- list(ratio_plots, energy_plots, gateway_energy_plots, sensors_energy_plots)
+}
 
+# funkcja tworząca obiekty wykresów dla statystyk z podziałem na liczby szczelin czasowych
+create_plots_objects_for_slots_nums <- function(stats_for_slots_nums, slots_nums) {
+  ratio_plots <- list()
+  energy_plots <- list()
+  gateway_energy_plots <- list()
+  sensors_energy_plots <- list()
+  for(i in 1:length(stats_for_slots_nums)) {
+    vec_x <- stats_for_slots_nums[[i]]$sensors_number
+    vec_y1 <- stats_for_slots_nums[[i]]$packet_received_ratio * 100
+    x_label <- "liczba sensorów w sieci"
+    y1_label <- "poprawnie dostarczone pakiety [%]"
+    title1 <- paste0("Wykres liczby poprawnie dostarczonych pakietów dla NS=", slots_nums[i])
+    vec_y2 <- stats_for_slots_nums[[i]]$total_energy_utilization
+    y2_label <- "sumaryczne zużycie energii [J] "
+    title2 <- paste0("Wykres sumarycznego zużycia energii dla NS=", slots_nums[i])
+    vec_y3 <- stats_for_slots_nums[[i]]$gateway_energy_utilization
+    y3_label <- "zużycie energii przez bramę główną [J]"
+    title3 <- paste0("Wykres zużycia energii przez bramę główną dla NS=", slots_nums[i])
+    vec_y4 <- stats_for_slots_nums[[i]]$total_energy_utilization - stats_for_slots_nums[[i]]$gateway_energy_utilization
+    y4_label <- "sumaryczne zużycie energii przez sensory [J]"
+    title4 <- paste0("Wykres sumarycznego zużycia energii przez sensory NS=", slots_nums[i])
+    ratio_plots[[i]] <- create_line_plot(vec_x, vec_y1, title1, x_label, y1_label)
+    energy_plots[[i]] <- create_line_plot(vec_x, vec_y2, title2, x_label, y2_label)
+    gateway_energy_plots[[i]] <- create_line_plot(vec_x, vec_y3, title3, x_label, y3_label)
+    sensors_energy_plots[[i]] <- create_line_plot(vec_x, vec_y4, title4, x_label, y4_label)
+  }
+  result_plots <- list(ratio_plots, energy_plots, gateway_energy_plots, sensors_energy_plots)
+}
 
+# funkcja oblicza średnie wartości statystyk (poprawnie dostarczone pakiety i zużycie energii)
+#   dla różnych liczb szczelin czasowych
+calculate_mean_stats_for_slots_nums <- function(stats_for_slots_nums, slots_nums) {
+  slots_num_mean_stats <- data.frame(matrix(ncol = 3, nrow = 0))
+  col_names <- c("slots_number", "mean_packets_received_ratio", "mean_total_energy_utilization")
+  colnames(slots_num_mean_stats) <- col_names
+  for (i in 1:length(stats_for_slots_nums)) {
+    df = data.frame(
+      slots_number = slots_nums[i],
+      mean_packets_received_ratio = mean(stats_for_slots_nums[[i]]$packet_received_ratio),
+      mean_total_energy_utilization = mean(stats_for_slots_nums[[i]]$total_energy_utilization)
+    )
+    slots_num_mean_stats <- rbind(slots_num_mean_stats, df)
+  }
+  return(slots_num_mean_stats)
+}
 
-
+# funkcja tworząca obiekty wykresów dla średnich wartości statystyk dla różnych liczb szczelin czasowych
+create_plots_objects_of_mean_stats_for_slots_nums <- function(mean_stats_df) {
+  plots <- list()
+  vec_x <- mean_stats_df$slots_number
+  x_label <- "liczba szczelin czasowych"
+  vec_y1 <- mean_stats_df$mean_packets_received_ratio * 100
+  y1_label <- "średni procent poprawnie dostarczonych pakietów [%]"
+  vec_y2 <- mean_stats_df$mean_total_energy_utilization
+  y2_label <- "średnie sumaryczne zużycie energii [J]"
+  plots[[1]] <- create_line_plot(x_vector = vec_x, y_vector = vec_y1,
+                                 x_label = x_label, y_label = y1_label)
+  plots[[2]] <- create_line_plot(x_vector = vec_x, y_vector = vec_y2,
+                                 x_label = x_label, y_label = y2_label)
+  return(plots)
+}
 

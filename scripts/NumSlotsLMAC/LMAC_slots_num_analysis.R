@@ -28,22 +28,25 @@ stats_for_slots_nums <- get_stats_for_all_slots_nums(
 
 # TODO: wizualizacje, 
 # TODO: wybór najlepszej liczby szczelin - dającej najlepsze średnie wyniki dla wszystkich rozmiarów sieci
-vec_x <- stats[[1]]$slots_number
-vec_y <- stats[[1]]$packet_received_ratio * 100
-title <- "Procent poprawnie dostarczonych pakietów"
-x_label <- "Liczba szczelin czasowych"
-y_label <- "Poprawnie dostarczone pakiety [%]"
 
-plot_1 <- create_line_plot(
-  x_vector = vec_x,
-  y_vector = vec_y,
-  #title = title,
-  x_label = x_label,
-  y_label = y_label
-)
-plot(plot_1)
+# wizualizacje statystyk
+network_sizes_plots <- create_plots_objects_for_network_sizes(stats_for_networks, network_sizes)
+display_plots(network_sizes_plots[[1]])
+display_plots(network_sizes_plots[[2]])
+display_plots(network_sizes_plots[[3]])
+display_plots(network_sizes_plots[[4]])
 
+slots_nums_plots <- create_plots_objects_for_slots_nums(stats_for_slots_nums, slots_nums)
+display_plots(slots_nums_plots[[1]])
+display_plots(slots_nums_plots[[2]])
+display_plots(slots_nums_plots[[3]])
+display_plots(slots_nums_plots[[4]])
 
+#średnie statystyki
+mean_stats_for_slots_nums <- calculate_mean_stats_for_slots_nums(stats_for_slots_nums, slots_nums)
+mean_stats_plots <- create_plots_objects_of_mean_stats_for_slots_nums(mean_stats_for_slots_nums)
+display_plots(mean_stats_plots)
+# względnie najlepsze wyniki uzyskano dla 16 szczelin czasowych
 
 
 
