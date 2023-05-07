@@ -1,0 +1,886 @@
+run;type;module;name;attrname;attrvalue;value
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;configname;DefaultXMAC;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;datetime;20230506-22:29:57;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;datetimef;20230506-222957;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;experiment;DefaultXMAC;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;inifile;omnetpp.ini;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;iterationvars;$N=70;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;iterationvarsd;N=70;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;iterationvarsf;N=70-;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;measurement;$N=70;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;network;SimMAC;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;processid;18872;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;repetition;0;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;replication;#0;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;resultdir;results/DefaultXMAC;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;runnumber;6;
+DefaultXMAC-6-20230506-22:29:57-18872;runattr;;;seedset;6;
+DefaultXMAC-6-20230506-22:29:57-18872;itervar;;;N;70;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;image-path;../../../../../Omnet++/inet4.5/images;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;result-dir;results/DefaultXMAC;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorsTotalNumber;70;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.vector-recording;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.wlan[*].mac.typename;XMac;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.wlan[*].mac.headerLength;80b;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.wlan[*].mac.slotDuration;1s;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.wlan[*].queue.typename;DropTailQueue;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;network;SimMAC;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorsType1Number;int(floor(0.5*sensorsTotalNumber));
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorsType2Number;int(floor(0.3*sensorsTotalNumber));
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorsType3Number;sensorsTotalNumber - (sensorsType1Number + sensorsType2Number);
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.distFromSensorToSink;50m;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.distFromServerToSink;30m;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;sim-time-limit;100s;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.enableVisualisation;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensor*.udp.packetSent:vector(packetBytes).vector-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.server.udp.packetReceived:vector(packetBytes).vector-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.gateway.eth[0].queue.outgoingDataRate:vector.vector-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType*[0].wlan[0].queue.outgoingDataRate:vector.vector-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.energyStorage.residualEnergyCapacity:vector.vector-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.server.app[0].endToEndDelay:vector.vector-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.server.app[0].throughput:vector.vector-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.vector-recording;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.server.udp.packetReceived:count.scalar-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensor*.udp.packetSent:count.scalar-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.residualEnergyCapacity:last.scalar-recording;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.scalar-recording;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.param-recording;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.wlan[*].typename;WirelessInterface;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.wlan[*].radio.typename;ApskScalarRadio;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.arp.typename;GlobalArp;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.netmaskRoutes;"""""";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.gateway.forwarding;true;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.maxTransmissionDuration;100ms;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.configurator.config;"xmldoc(""topology.xml"")";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.configurator.addStaticRoutes;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.mobility.constraintAreaMaxX;500m;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.mobility.constraintAreaMinX;0m;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.mobility.constraintAreaMaxY;400m;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.mobility.constraintAreaMinY;0m;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.mobility.constraintAreaMaxZ;0m;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.mobility.constraintAreaMinZ;0m;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.mobility.initFromDisplayString;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.radio.centerFrequency;2.45GHz;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.radio.bandwidth;2.8MHz;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.radio.transmitter.bitrate;19200 bps;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.radio.transmitter.headerLength;8b;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.radio.transmitter.preambleDuration;0.0001s;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.radio.transmitter.power;2.24mW;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.radio.receiver.energyDetection;-90dBm;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.radio.receiver.sensitivity;-100dBm;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;**.radio.receiver.snirThreshold;-8dB;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.radioMedium.backgroundNoise.power;-110dBm;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.visualizer.*.routingTableVisualizer.displayRoutingTables;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.visualizer.*.routingTableVisualizer.displayRoutesIndividually;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.visualizer.*.routingTableVisualizer.lineShift;0;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.visualizer.*.routingTableVisualizer.displayLabels;false;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.visualizer.*.infoVisualizer.modules;"""*.server.app[0]""";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.visualizer.*.infoVisualizer.format;"""%t""";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType1*.numApps;1;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType1*.app[*].typename;UdpBasicApp;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType1*.app[*].destAddresses;"""server""";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType1*.app[*].destPort;1000;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType1*.app[*].sendInterval;1s;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType1*.app[*].startTime;exponential(1s);
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType1*.app[*].messageLength;25Byte;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType1*.app[*].packetName;"""Type1SensorData""";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType2*.numApps;1;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType2*.app[*].typename;UdpBasicApp;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType2*.app[*].destAddresses;"""server""";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType2*.app[*].destPort;1000;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType2*.app[*].sendInterval;uniform(0.2s,0.5s);
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType2*.app[*].startTime;exponential(1s);
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType2*.app[*].messageLength;10Byte;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType2*.app[*].packetName;"""Type2SensorData""";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType3*.numApps;1;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType3*.app[*].typename;UdpBasicApp;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType3*.app[*].destAddresses;"""server""";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType3*.app[*].destPort;1000;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType3*.app[*].sendInterval;5s;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType3*.app[*].startTime;exponential(1s);
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType3*.app[*].messageLength;40Byte;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.sensorType3*.app[*].packetName;"""Type3SensorData""";
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.server.numApps;1;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.server.app[0].typename;UdpSink;
+DefaultXMAC-6-20230506-22:29:57-18872;config;;;*.server.app[0].localPort;1000;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;;;-4.3018687094752
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[0].udp;packetSent:count;;;98
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[0].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[0].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[0].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[0].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;;;-4.7877760941306
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[1].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[1].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[1].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[1].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[1].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;;;-4.9826379223239
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[2].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[2].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[2].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[2].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[2].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;;;-4.594998572603
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[3].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[3].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[3].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[3].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[3].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;;;-3.9862268542269
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[4].udp;packetSent:count;;;96
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[4].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[4].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[4].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[4].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;;;-4.7263014087893
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[5].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[5].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[5].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[5].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[5].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;;;-4.4087430347356
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[6].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[6].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[6].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[6].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[6].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;;;-4.2485707542255
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[7].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[7].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[7].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[7].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[7].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[8].energyStorage;residualEnergyCapacity:last;;;-4.5622342154174
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[8].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[8].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[8].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[8].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[8].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[8].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[8].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[8].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[8].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[8].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[9].energyStorage;residualEnergyCapacity:last;;;-4.5653410383611
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[9].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[9].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[9].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[9].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[9].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[9].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[9].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[9].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[9].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[9].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[10].energyStorage;residualEnergyCapacity:last;;;-4.437048824744
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[10].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[10].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[10].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[10].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[10].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[10].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[10].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[10].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[10].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[10].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[11].energyStorage;residualEnergyCapacity:last;;;-4.8376477338379
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[11].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[11].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[11].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[11].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[11].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[11].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[11].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[11].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[11].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[11].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[12].energyStorage;residualEnergyCapacity:last;;;-4.4337161070978
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[12].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[12].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[12].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[12].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[12].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[12].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[12].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[12].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[12].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[12].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[13].energyStorage;residualEnergyCapacity:last;;;-4.3037009593505
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[13].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[13].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[13].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[13].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[13].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[13].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[13].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[13].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[13].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[13].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[14].energyStorage;residualEnergyCapacity:last;;;-4.9154663947638
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[14].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[14].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[14].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[14].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[14].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[14].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[14].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[14].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[14].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[14].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[15].energyStorage;residualEnergyCapacity:last;;;-4.6089522427331
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[15].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[15].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[15].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[15].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[15].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[15].udp;packetSent:count;;;98
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[15].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[15].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[15].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[15].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[16].energyStorage;residualEnergyCapacity:last;;;-4.369248146855
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[16].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[16].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[16].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[16].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[16].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[16].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[16].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[16].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[16].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[16].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[17].energyStorage;residualEnergyCapacity:last;;;-4.7331129786685
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[17].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[17].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[17].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[17].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[17].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[17].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[17].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[17].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[17].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[17].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[18].energyStorage;residualEnergyCapacity:last;;;-4.5344778649439
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[18].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[18].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[18].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[18].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[18].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[18].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[18].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[18].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[18].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[18].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[19].energyStorage;residualEnergyCapacity:last;;;-4.2561209382707
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[19].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[19].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[19].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[19].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[19].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[19].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[19].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[19].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[19].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[19].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[20].energyStorage;residualEnergyCapacity:last;;;-4.6956135358336
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[20].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[20].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[20].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[20].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[20].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[20].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[20].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[20].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[20].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[20].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[21].energyStorage;residualEnergyCapacity:last;;;-4.8983442654115
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[21].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[21].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[21].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[21].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[21].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[21].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[21].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[21].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[21].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[21].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[22].energyStorage;residualEnergyCapacity:last;;;-4.5705926857334
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[22].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[22].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[22].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[22].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[22].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[22].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[22].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[22].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[22].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[22].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[23].energyStorage;residualEnergyCapacity:last;;;-4.3986086103599
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[23].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[23].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[23].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[23].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[23].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[23].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[23].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[23].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[23].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[23].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[24].energyStorage;residualEnergyCapacity:last;;;-4.3571870513303
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[24].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[24].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[24].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[24].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[24].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[24].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[24].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[24].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[24].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[24].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[25].energyStorage;residualEnergyCapacity:last;;;-4.413403325481
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[25].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[25].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[25].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[25].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[25].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[25].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[25].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[25].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[25].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[25].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[26].energyStorage;residualEnergyCapacity:last;;;-4.4356445813996
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[26].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[26].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[26].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[26].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[26].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[26].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[26].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[26].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[26].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[26].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[27].energyStorage;residualEnergyCapacity:last;;;-4.6422307464824
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[27].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[27].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[27].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[27].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[27].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[27].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[27].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[27].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[27].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[27].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[28].energyStorage;residualEnergyCapacity:last;;;-4.6152354495278
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[28].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[28].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[28].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[28].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[28].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[28].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[28].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[28].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[28].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[28].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[29].energyStorage;residualEnergyCapacity:last;;;-4.7520467576894
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[29].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[29].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[29].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[29].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[29].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[29].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[29].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[29].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[29].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[29].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[30].energyStorage;residualEnergyCapacity:last;;;-4.841802771395
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[30].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[30].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[30].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[30].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[30].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[30].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[30].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[30].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[30].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[30].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[31].energyStorage;residualEnergyCapacity:last;;;-4.6427922498564
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[31].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[31].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[31].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[31].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[31].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[31].udp;packetSent:count;;;100
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[31].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[31].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[31].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[31].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[32].energyStorage;residualEnergyCapacity:last;;;-4.2312119937716
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[32].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[32].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[32].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[32].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[32].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[32].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[32].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[32].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[32].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[32].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[33].energyStorage;residualEnergyCapacity:last;;;-4.5116116953366
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[33].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[33].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[33].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[33].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[33].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[33].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[33].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[33].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[33].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[33].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[34].energyStorage;residualEnergyCapacity:last;;;-4.561527255784
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[34].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[34].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[34].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[34].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[34].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType1[34].udp;packetSent:count;;;99
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[34].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[34].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[34].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType1[34].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;;;-5.0699818284828
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[0].udp;packetSent:count;;;277
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[0].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[0].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[0].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[0].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;;;-4.9593958914921
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[1].udp;packetSent:count;;;280
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[1].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[1].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[1].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[1].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;;;-5.1688693736431
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[2].udp;packetSent:count;;;281
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[2].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[2].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[2].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[2].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;;;-5.042034057987
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[3].udp;packetSent:count;;;284
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[3].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[3].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[3].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[3].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;;;-5.1284725347991
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[4].udp;packetSent:count;;;278
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[4].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[4].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[4].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[4].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[5].energyStorage;residualEnergyCapacity:last;;;-5.1108577005516
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[5].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[5].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[5].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[5].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[5].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[5].udp;packetSent:count;;;289
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[5].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[5].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[5].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[5].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[6].energyStorage;residualEnergyCapacity:last;;;-5.1281156222043
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[6].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[6].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[6].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[6].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[6].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[6].udp;packetSent:count;;;279
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[6].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[6].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[6].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[6].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[7].energyStorage;residualEnergyCapacity:last;;;-5.1111789527343
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[7].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[7].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[7].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[7].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[7].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[7].udp;packetSent:count;;;287
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[7].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[7].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[7].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[7].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[8].energyStorage;residualEnergyCapacity:last;;;-5.1253487776244
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[8].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[8].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[8].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[8].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[8].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[8].udp;packetSent:count;;;285
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[8].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[8].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[8].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[8].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[9].energyStorage;residualEnergyCapacity:last;;;-5.0896639477143
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[9].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[9].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[9].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[9].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[9].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[9].udp;packetSent:count;;;278
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[9].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[9].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[9].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[9].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[10].energyStorage;residualEnergyCapacity:last;;;-5.0251888774537
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[10].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[10].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[10].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[10].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[10].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[10].udp;packetSent:count;;;280
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[10].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[10].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[10].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[10].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[11].energyStorage;residualEnergyCapacity:last;;;-5.146921624289
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[11].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[11].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[11].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[11].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[11].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[11].udp;packetSent:count;;;286
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[11].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[11].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[11].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[11].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[12].energyStorage;residualEnergyCapacity:last;;;-5.144972396162
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[12].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[12].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[12].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[12].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[12].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[12].udp;packetSent:count;;;281
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[12].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[12].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[12].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[12].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[13].energyStorage;residualEnergyCapacity:last;;;-5.0839351016671
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[13].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[13].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[13].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[13].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[13].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[13].udp;packetSent:count;;;285
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[13].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[13].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[13].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[13].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[14].energyStorage;residualEnergyCapacity:last;;;-5.0437953053005
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[14].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[14].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[14].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[14].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[14].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[14].udp;packetSent:count;;;288
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[14].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[14].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[14].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[14].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[15].energyStorage;residualEnergyCapacity:last;;;-5.1571563990906
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[15].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[15].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[15].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[15].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[15].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[15].udp;packetSent:count;;;287
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[15].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[15].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[15].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[15].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[16].energyStorage;residualEnergyCapacity:last;;;-5.1387108555963
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[16].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[16].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[16].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[16].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[16].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[16].udp;packetSent:count;;;288
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[16].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[16].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[16].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[16].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[17].energyStorage;residualEnergyCapacity:last;;;-5.0989923390567
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[17].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[17].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[17].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[17].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[17].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[17].udp;packetSent:count;;;283
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[17].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[17].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[17].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[17].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[18].energyStorage;residualEnergyCapacity:last;;;-5.181152123611
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[18].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[18].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[18].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[18].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[18].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[18].udp;packetSent:count;;;283
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[18].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[18].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[18].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[18].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[19].energyStorage;residualEnergyCapacity:last;;;-5.2201050779255
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[19].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[19].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[19].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[19].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[19].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[19].udp;packetSent:count;;;289
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[19].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[19].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[19].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[19].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[20].energyStorage;residualEnergyCapacity:last;;;-5.1774598910851
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[20].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[20].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[20].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[20].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[20].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType2[20].udp;packetSent:count;;;285
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[20].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[20].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[20].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType2[20].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;;;-1.193942783153
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[0].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[0].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[0].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[0].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[0].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;;;-1.1907127633095
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[1].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[1].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[1].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[1].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[1].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;;;-1.1887759313226
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[2].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[2].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[2].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[2].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[2].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;;;-1.18878850744
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[3].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[3].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[3].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[3].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[3].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[4].energyStorage;residualEnergyCapacity:last;;;-1.189030748666
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[4].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[4].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[4].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[4].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[4].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[4].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[4].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[4].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[4].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[4].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[5].energyStorage;residualEnergyCapacity:last;;;-1.1929404749747
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[5].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[5].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[5].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[5].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[5].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[5].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[5].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[5].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[5].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[5].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[6].energyStorage;residualEnergyCapacity:last;;;-1.1966090235392
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[6].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[6].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[6].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[6].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[6].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[6].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[6].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[6].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[6].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[6].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[7].energyStorage;residualEnergyCapacity:last;;;-1.1949887015002
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[7].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[7].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[7].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[7].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[7].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[7].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[7].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[7].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[7].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[7].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[8].energyStorage;residualEnergyCapacity:last;;;-1.1997998967902
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[8].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[8].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[8].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[8].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[8].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[8].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[8].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[8].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[8].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[8].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[9].energyStorage;residualEnergyCapacity:last;;;-1.2023408693359
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[9].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[9].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[9].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[9].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[9].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[9].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[9].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[9].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[9].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[9].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[10].energyStorage;residualEnergyCapacity:last;;;-1.1972565134439
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[10].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[10].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[10].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[10].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[10].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[10].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[10].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[10].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[10].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[10].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[11].energyStorage;residualEnergyCapacity:last;;;-1.1439568133968
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[11].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[11].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[11].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[11].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[11].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[11].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[11].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[11].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[11].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[11].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[12].energyStorage;residualEnergyCapacity:last;;;-1.2036233132914
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[12].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[12].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[12].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[12].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[12].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[12].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[12].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[12].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[12].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[12].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[13].energyStorage;residualEnergyCapacity:last;;;-1.1984177678643
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[13].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[13].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[13].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[13].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[13].energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.sensorType3[13].udp;packetSent:count;;;20
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[13].udp;packetSent:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[13].udp;packetSent:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[13].udp;packetSent:count;source;packetSent;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.sensorType3[13].udp;packetSent:count;title;packets sent, count;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;;;-0.080234028809113
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;recordingmode;last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;unit;J;
+DefaultXMAC-6-20230506-22:29:57-18872;scalar;SimMAC.server.udp;packetReceived:count;;;2
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.server.udp;packetReceived:count;interpolationmode;none;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.server.udp;packetReceived:count;recordingmode;count;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.server.udp;packetReceived:count;source;packetReceived;
+DefaultXMAC-6-20230506-22:29:57-18872;attr;SimMAC.server.udp;packetReceived:count;title;packets received, count;
