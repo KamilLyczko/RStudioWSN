@@ -17,34 +17,27 @@ get_run_numbers <- function(run_names_vector) {
 # funkcja zwraca przesunięcie numeru testu
 # testy w pliku wynikowym Omnet++ są numerowane w sposób ciągły 
 #   (numeracja nie jest zerowana przy przeprowadzania testów dla różnych rozmiarów sieci)
-# wartość przesunięcia jest potrzebna do poprawnego przypisania liczby szczelin czasowych do danego testu
-#   dla badanego aktualnie rozmiaru sieci
+# wartość przesunięcia jest potrzebna do poprawnego przypisania wartości badanego parametru
+#   do danego testu dla badanego aktualnie rozmiaru sieci
 get_run_number_offset <- function(run_names_vector) {
   run_numbers <- get_run_numbers(run_names_vector)
   return(min(run_numbers))
 }
 
-# funkcja zwraca liczbę szczelin czasowych rozpatrywanych w danym teście
-translate_run_name_to_num_slots <- function(run_name, num_slots_values, run_number_offset=0) {
+# funkcja zwraca wartość parametru badaną w danym teście
+translate_run_name_to_par_value <- function(run_name, parameter_values, run_number_offset=0) {
   run_number <- get_run_number(run_name) - run_number_offset
-  return(num_slots_values[run_number+1])
+  return(parameter_values[run_number+1])
 }
 
-# funkcja zwraca liczby szczelin czasowych przypisanych dla wielu testów
-translate_run_names_to_slot_nums <- function(run_names_vector, num_slots_values) {
+# funkcja zwraca wartości badanego parametru przypisane do podanych w wektorze numerów testów 
+translate_run_names_to_par_values <- function(run_names_vector, parameter_values) {
   run_num_offset <- get_run_number_offset(run_names_vector)
   slot_nums_vec <- c()
   for (i in 1:length(run_names_vector)) {
-    slot_nums_vec[i] <- translate_run_name_to_num_slots(run_names_vector[i], num_slots_values, run_num_offset)
+    slot_nums_vec[i] <- translate_run_name_to_par_value(run_names_vector[i], parameter_values, run_num_offset)
   }
   return(slot_nums_vec)
-}
-
-# funkcja zwraca dane związane z wartościami skalarnymi zapisanymi w podanym obiekcie danych
-# obiekt danych zawiera dane wczytane z pliku wynikowego Omnet++
-get_scalars <- function(data_obj) {
-  scalar_data <- subset(data_obj, (type == "scalar"))
-  return(scalar_data)
 }
 
 # funkcja zwraca ramkę danych z wartościami skalarnymi zestawionymi z liczbami szczelin czasowych, 
@@ -52,7 +45,7 @@ get_scalars <- function(data_obj) {
 get_all_scalars_for_slots_nums <- function(data_obj, num_slots_values) {
   scalars <- get_scalars(data_obj)
   scalars_mod <- data.frame(
-    slots_number = translate_run_names_to_slot_nums(scalars$run, num_slots_values),
+    slots_number = translate_run_names_to_par_values(scalars$run, num_slots_values),
     module = scalars$module,
     name = scalars$name,
     value = scalars$value
@@ -66,20 +59,6 @@ get_scalars_for_slots_num <- function(scalars, slots_num) {
   return(data_subset)
 }
 
-# funkcja zwraca wektor z wartościami wielkości skalarnej o podanej nazwie
-get_values <- function(scalar_data, data_name) {
-  value_data <- subset(scalar_data, (name == data_name))
-  values_vector <- c(value_data$value)
-  return(values_vector)
-}
-
-# funkcja zwraca wektor z wartością wielkości skalarnej o podanej nazwie dla podanego modułu
-#   w pliku wynikowym Omnet++
-get_module_data_value <- function(scalar_data, module_name, data_name) {
-  value_data <- subset(scalar_data, (module == module_name & name == data_name))
-  values_vector <- c(value_data$value)
-  return(values_vector)
-}
 
 # funkcja oblicza statystyki uzyskiwane dla pojedynczej liczby szczelin
 calculate_stats_for_slots_num <- function(scalars, slots_num) {

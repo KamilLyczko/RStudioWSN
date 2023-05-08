@@ -26,9 +26,6 @@ stats_for_slots_nums <- get_stats_for_all_slots_nums(
   file_name_prefix
 )
 
-# TODO: wizualizacje, 
-# TODO: wybór najlepszej liczby szczelin - dającej najlepsze średnie wyniki dla wszystkich rozmiarów sieci
-
 # wizualizacje statystyk
 network_sizes_plots <- create_plots_objects_for_network_sizes(stats_for_networks, network_sizes)
 display_plots(network_sizes_plots[[1]])
