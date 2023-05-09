@@ -70,6 +70,20 @@ create_stats_visualizations <- function(stats_df,
   return(plots_list)
 }
 
+# funkcja zwraca obiekt wykresu tworzonego dla danych zawartych w przekazywanej jako argument
+#   ramce danych
+create_multiple_line_plot_from_df <- function(df_with_x_and_ys,
+                                      title = "", x_label = "", 
+                                      y_label = "", legend_label = "") {
+  col_names <- colnames(df_with_x_and_ys)
+  df_long <- melt(df_with_x_and_ys, id = "x")
+  ggplot(df_long, aes(x = x, y = value, color = variable)) + 
+    geom_line() +
+    geom_point() +
+    scale_x_continuous(breaks = df_with_x_and_ys[[1]]) +
+    labs(title = title, x = x_label, y = y_label, color = legend_label)
+}
+
 # ----------------------------------------------------------------------------------------------
 # funkcje operujące na danych
 

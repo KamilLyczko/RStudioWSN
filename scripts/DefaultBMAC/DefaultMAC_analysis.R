@@ -115,4 +115,38 @@ LMAC_defaultSD_differentNS_medium_plots <-
   create_stats_visualizations(LMAC_defaultSD_differentNS_medium_stats,
                               "- LMAC z liczbą szczelin czasowych zależną od rozmiaru sieci")
 display_plots(LMAC_defaultSD_differentNS_medium_plots)
+
+
+#zestawienie wyników
                                                  
+packets_received_summary <- data.frame(x = seq(10, 100, 10),
+                                "domyślny BMAC" = DefaultBMAC_stats$packet_received_ratio*100,
+                                "domyślny XMAC" = DefaultXMAC_stats$packet_received_ratio*100,
+                                "domyślny LMAC" = DefaultLMAC_stats$packet_received_ratio*100,
+                                check.names = FALSE)
+
+packets_received_medium_summary <- data.frame(x = seq(5, 50, 5),
+                                       "domyślny BMAC" = 
+                                         DefaultBMAC_medium_stats$packet_received_ratio*100,
+                                       "domyślny XMAC" = 
+                                         DefaultXMAC_medium_stats$packet_received_ratio*100,
+                                       "domyślny LMAC" = 
+                                         DefaultLMAC_medium_stats$packet_received_ratio*100,
+                                       "domyślny LMAC z różnymi liczbami szczlin czasowych" =
+                                         LMAC_defaultSD_differentNS_medium_stats$packet_received_ratio*100,
+                                       check.names = FALSE)
+
+
+summary_plot <- create_multiple_line_plot_from_df(packets_received_summary,
+                                                  "Porównanie skuteczności pakietów MAC",
+                                                  "liczba sensorów w sieci",
+                                                  "poprawnie dostarczone pakiety [%]",
+                                                  "Protokoły:")
+plot(summary_plot)
+
+summary_medium_plot <- create_multiple_line_plot_from_df(packets_received_medium_summary,
+                                                  "Porównanie skuteczności pakietów MAC - średni rozmiar sieci",
+                                                  "liczba sensorów w sieci",
+                                                  "poprawnie dostarczone pakiety [%]",
+                                                  "Protokoły:")
+plot(summary_medium_plot)
