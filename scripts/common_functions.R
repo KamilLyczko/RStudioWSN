@@ -110,6 +110,75 @@ get_module_data_value <- function(scalar_data, module_name, data_name) {
   return(values_vector)
 }
 
+# funkcja zwraca numer pojedynczego testu na podstawie jego nazwy zapisanej w pliku wynikowym Omnet++
+get_run_number <- function(run_name) {
+  num_substr <- str_extract(run_name, "-(\\d+)-")
+  num_substr_cleaned <- str_extract(num_substr, "\\d+")
+  return(as.numeric(num_substr_cleaned))
+}
+
+# funkcja zwraca numery testów określane na podstawie ich nazw (funcka operuje na wektorach)
+get_run_numbers <- function(run_names_vector) {
+  run_numbers <- c()
+  for (i in 1:length(run_names_vector)) {
+    run_numbers[i] <- get_run_number(run_names_vector[i])
+  }
+  return(unique(run_numbers))
+}
+
+# funkcja zwraca przesunięcie numeru testu
+# testy w pliku wynikowym Omnet++ są numerowane w sposób ciągły 
+#   (numeracja nie jest zerowana przy przeprowadzania testów dla różnych rozmiarów sieci)
+# wartość przesunięcia jest potrzebna do poprawnego przypisania wartości badanego parametru
+#   do danego testu dla badanego aktualnie rozmiaru sieci
+get_run_number_offset <- function(run_names_vector) {
+  run_numbers <- get_run_numbers(run_names_vector)
+  return(min(run_numbers))
+}
+
+# funkcja zwraca wartość parametru badaną w danym teście
+translate_run_name_to_par_value <- function(run_name, parameter_values, run_number_offset=0) {
+  run_number <- get_run_number(run_name) - run_number_offset
+  return(parameter_values[run_number+1])
+}
+
+# funkcja zwraca wartości badanego parametru przypisane do podanych w wektorze numerów testów 
+translate_run_names_to_par_values <- function(run_names_vector, parameter_values) {
+  run_num_offset <- get_run_number_offset(run_names_vector)
+  par_values_vec <- c()
+  for (i in 1:length(run_names_vector)) {
+    par_values_vec[i] <- translate_run_name_to_par_value(run_names_vector[i], parameter_values, run_num_offset)
+  }
+  return(par_values_vec)
+}
+
+# funkcja zwraca ramkę danych z wartościami skalarnymi zestawionymi z wartościami badanego parametru, 
+#   dla których zostały uzyskane
+get_all_scalars_for_par_values <- function(data_obj, par_values, par_name = "parameter_value") {
+  scalars <- get_scalars(data_obj)
+  scalars_mod <- data.frame(
+    par_name = as.numeric(translate_run_names_to_par_values(scalars$run, par_values)),
+    module = scalars$module,
+    name = scalars$name,
+    value = scalars$value
+  )
+  col_names <- c(par_name, "module", "name", "value")
+  colnames(scalars_mod) <- col_names
+  return(scalars_mod)
+}
+
+# funkcja zwraca ramkę danych z wartościami skalarnymi uzyskanymi dla pojedynczej wartości
+#   badanego parametru
+get_scalars_for_par_value <- function(scalars, par_value) {
+  col_names_original <- colnames(scalars)
+  col_names_copy <- col_names_original
+  col_names_copy[[1]] <- "par_name"
+  colnames(scalars) <- col_names_copy
+  data_subset <- subset(scalars, (par_name == as.character(par_value)))
+  colnames(data_subset) <- col_names_original
+  return(data_subset)
+}
+
 
 # ----------------------------------------------------------------------------------------------
 # funkcje obliczające statystyki
@@ -176,4 +245,69 @@ calculate_stats_multiple_files_simple <- function(input_data_dir,
   colnames(collective_stats) <- col_names
   save_data(collective_stats, output_data_path)
   return(collective_stats)
+}
+
+
+# funkcja zwraca ramkę danych z pojedynczym wierszem zawierającym statystyki obliczone
+#     dla podanej wartości badanego parametru
+calculate_stats_for_par_value <- function(all_scalars, par_value, par_name = "par_name") {
+  scalars_subset <- get_scalars_for_par_value(all_scalars, par_value)
+  subset_stats <- calculate_stats_single_row(scalars_subset)
+  stats_with_par_value <- data.frame(par_value, subset_stats)
+  col_names <- colnames(subset_stats)
+  col_names <- c(par_name, col_names)
+  colnames(stats_with_par_value) <- col_names
+  return(stats_with_par_value)
+}
+
+# funkcja oblicza wartości statystyk dla danych zawartych w pojedynczym pliku
+# zakłada ona, że plik zawiera dane dotyczące wielu wartości badanego parametru (więcej niż jednego testu)
+calculate_stats_single_file <- function(input_file_path, par_values, par_name = "par_name") {
+  data_obj <- load_data(input_file_path)
+  scalars <- get_all_scalars_for_par_values(data_obj, par_values, par_name)
+  statistics <- data.frame(matrix(nrow = 0, ncol = 6))
+  col_names <- c(par_name, "total_packets_sent", "total_packets_received",
+                 "packet_received_ratio", "total_energy_utilization",
+                 "gateway_energy_utilization")
+  colnames(statistics) <- col_names
+  for (par_value in par_values) {
+    df <- calculate_stats_for_par_value(scalars, par_value, par_name)
+    statistics <- rbind(statistics, df)
+  }
+  return(statistics)
+}
+
+# funkcja oblicza wartości statystyk dla danych zawartych w wielu plikach
+# zwraca listę z ramkami danych, w której pojedyncza ramka zawiera statystyki obliczone na podstawie
+#     pojedynczego pliku
+# zakłada ona, że każdy plik zawiera dane dotyczące wielu testów (wielu wartości parametrów)
+# wyniki zapisywane są do plików o ścieżkach określanych na podstawie podanych parametrów
+calculate_stats_multiple_files <- function(input_data_dir, 
+                                           output_data_dir, 
+                                           file_name_prefix,
+                                           file_name_numbers_vec,
+                                           par_values,
+                                           par_name = "par_name",
+                                           output_file_suffix=".csv",
+                                           input_file_suffix="") {
+  stats_list <- list()
+  for (i in 1:length(file_name_numbers_vec)) {
+    input_data_path <- paste0(input_data_dir, 
+                              file_name_prefix, 
+                              file_name_numbers_vec[i], 
+                              input_file_suffix,
+                              ".csv")
+    file_stats <- calculate_stats_single_file(input_data_path,
+                                              par_values,
+                                              par_name)
+    output_file_path <- paste0(output_data_dir, 
+                               file_name_prefix, 
+                               file_name_numbers_vec[i],
+                               input_file_suffix,
+                               "_results",
+                               output_file_suffix)
+    save_data(file_stats, output_file_path)
+    stats_list[[i]] <- file_stats
+  }
+  return(stats_list)
 }

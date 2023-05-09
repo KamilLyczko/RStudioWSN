@@ -1,47 +1,6 @@
-# funkcja zwraca numer pojedynczego testu na podstawie jego nazwy zapisanej w pliku wynikowym Omnet++
-get_run_number <- function(run_name) {
-  num_substr <- str_extract(run_name, "-(\\d+)-")
-  num_substr_cleaned <- str_extract(num_substr, "\\d+")
-  return(as.numeric(num_substr_cleaned))
-}
-
-# funkcja zwraca numery testów określane na podstawie ich nazw (funcka operuje na wektorach)
-get_run_numbers <- function(run_names_vector) {
-  run_numbers <- c()
-  for (i in 1:length(run_names_vector)) {
-    run_numbers[i] <- get_run_number(run_names_vector[i])
-  }
-  return(unique(run_numbers))
-}
-
-# funkcja zwraca przesunięcie numeru testu
-# testy w pliku wynikowym Omnet++ są numerowane w sposób ciągły 
-#   (numeracja nie jest zerowana przy przeprowadzania testów dla różnych rozmiarów sieci)
-# wartość przesunięcia jest potrzebna do poprawnego przypisania wartości badanego parametru
-#   do danego testu dla badanego aktualnie rozmiaru sieci
-get_run_number_offset <- function(run_names_vector) {
-  run_numbers <- get_run_numbers(run_names_vector)
-  return(min(run_numbers))
-}
-
-# funkcja zwraca wartość parametru badaną w danym teście
-translate_run_name_to_par_value <- function(run_name, parameter_values, run_number_offset=0) {
-  run_number <- get_run_number(run_name) - run_number_offset
-  return(parameter_values[run_number+1])
-}
-
-# funkcja zwraca wartości badanego parametru przypisane do podanych w wektorze numerów testów 
-translate_run_names_to_par_values <- function(run_names_vector, parameter_values) {
-  run_num_offset <- get_run_number_offset(run_names_vector)
-  slot_nums_vec <- c()
-  for (i in 1:length(run_names_vector)) {
-    slot_nums_vec[i] <- translate_run_name_to_par_value(run_names_vector[i], parameter_values, run_num_offset)
-  }
-  return(slot_nums_vec)
-}
-
 # funkcja zwraca ramkę danych z wartościami skalarnymi zestawionymi z liczbami szczelin czasowych, 
 #   dla których zostały uzyskane
+# UOGÓLNIONA: get_all_scalars_for_par_values
 get_all_scalars_for_slots_nums <- function(data_obj, num_slots_values) {
   scalars <- get_scalars(data_obj)
   scalars_mod <- data.frame(
@@ -53,7 +12,9 @@ get_all_scalars_for_slots_nums <- function(data_obj, num_slots_values) {
   return(scalars_mod)
 }
 
+
 # funkcja zwraca ramkę danych z wartościami skalarnymi uzyskanymi dla pojedynczej liczby szczelin
+# UOGÓLNIONA: get_scalars_for_par_value
 get_scalars_for_slots_num <- function(scalars, slots_num) {
   data_subset <- subset(scalars, (slots_number == slots_num))
   return(data_subset)
