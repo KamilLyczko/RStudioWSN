@@ -22,6 +22,7 @@ get_scalars_for_slots_num <- function(scalars, slots_num) {
 
 
 # funkcja oblicza statystyki uzyskiwane dla pojedynczej liczby szczelin
+# UOGÓLNIONA: calculate_stats_single_row, calculate_stats_for_par_value
 calculate_stats_for_slots_num <- function(scalars, slots_num) {
   scalars_for_slots_num <- get_scalars_for_slots_num(scalars, slots_num)
   packets_sent_values <- get_values(scalars_for_slots_num, "packetSent:count")
@@ -84,7 +85,7 @@ get_stats_for_slots_num <- function(stats_list, slots_num, network_sizes, output
                  "gateway_energy_utilization")
   colnames(slots_num_stats) <- col_names
   for (i in 1:length(stats_list)) {
-    stats_subset <- subset(stats_list[[i]], (slots_number == slots_num))
+    stats_subset <- subset(stats_list[[i]], (slots_number == as.character(slots_num)))
     df <- data.frame(
       sensors_number = network_sizes[i],
       total_packets_sent = stats_subset$total_packets_sent,

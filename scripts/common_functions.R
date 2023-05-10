@@ -289,25 +289,57 @@ calculate_stats_multiple_files <- function(input_data_dir,
                                            par_values,
                                            par_name = "par_name",
                                            output_file_suffix=".csv",
-                                           input_file_suffix="") {
+                                           input_file_suffix=".csv") {
   stats_list <- list()
   for (i in 1:length(file_name_numbers_vec)) {
     input_data_path <- paste0(input_data_dir, 
                               file_name_prefix, 
                               file_name_numbers_vec[i], 
-                              input_file_suffix,
-                              ".csv")
+                              input_file_suffix)
     file_stats <- calculate_stats_single_file(input_data_path,
                                               par_values,
                                               par_name)
     output_file_path <- paste0(output_data_dir, 
                                file_name_prefix, 
                                file_name_numbers_vec[i],
-                               input_file_suffix,
                                "_results",
                                output_file_suffix)
     save_data(file_stats, output_file_path)
     stats_list[[i]] <- file_stats
   }
   return(stats_list)
+}
+
+
+# funkcja zwraca ramkę danych ze statystykami uzyskanymi dla podanej wartości parametru
+# jako argument przyjmuje listę ze statystykami obliczonymi dla kolejnych rozmiarów sieci
+get_stats_for_par_value <- function(stats_list, network_sizes, par_value) {
+  stats_for_par_value <- data.frame(matrix(nrow = 0, ncol = 6))
+  col_names <- c()
+  for(i in 1:length(stats_list)) {
+    df <- stats_list[[i]][stats_list[[i]][1] == as.character(par_value),]
+    df <- data.frame(network_size = network_sizes[i],
+                     df[, 2:6])
+    if(i == length(stats_list)) {
+      col_names <- colnames(df)
+    }
+    stats_for_par_value <- rbind(stats_for_par_value, df)
+  }
+  colnames(stats_for_par_value) <- col_names
+  return(stats_for_par_value)
+}
+
+
+#funkcja zwraca listę ze statystykami uzyskanymi dla kolejnych wartości badanego parametru
+get_stats_for_par_values <- function(stats_list, network_sizes, par_values, 
+                                     output_files_dir, files_name_prefix, files_names_suffix = ".csv") {
+  stats_for_pars_list <- list()
+  for(i in 1:length(par_values)) {
+    par_value_stats <- get_stats_for_par_value(stats_list, network_sizes, par_values[i])
+    stats_for_pars_list[[i]] <- par_value_stats
+    output_file_path <- paste0(output_files_dir, 
+                               files_name_prefix, par_values[i], "_results", file_name_suffix)
+    save_data(par_value_stats, output_file_path)
+  }
+  return(stats_for_pars_list)
 }
