@@ -343,3 +343,20 @@ get_stats_for_par_values <- function(stats_list, network_sizes, par_values,
   }
   return(stats_for_pars_list)
 }
+
+# funkcja zwraca ramkę danych ze średnimi statystykami (średni procent poprawnie dostarczonych
+#     pakietów oraz średnie zużycie energii) dla różnych wartości parametru
+#  średnie liczone na podstawie wyników uzyskanych dla różnych rozmiarów - średni wynik dla 
+#     wszystkich sieci
+calculate_mean_stats_for_par_values <- function(stats_for_pars_list, par_values, par_name) {
+  mean_stats <- data.frame(matrix(nrow = 0, ncol = 3))
+  col_names <- c(par_name, "mean_packets_received_ratio", "mean_energy_utilization")
+  for(i in 1:length(par_values)) {
+    mean_stats_df <- data.frame(par_values[i], 
+                                mean(stats_for_pars_list[[i]]$packet_received_ratio),
+                                mean(stats_for_pars_list[[i]]$total_energy_utilization))
+    mean_stats <- rbind(mean_stats, mean_stats_df)
+  }
+  colnames(mean_stats) <- col_names
+  return(mean_stats)
+}

@@ -138,7 +138,7 @@ slot_durations <- seq(0.01, 0.3, 0.01)
 file_name_prefix <- "SlotDurationXMAC_SD"
 file_name_suffix <- "_short.csv"
 
-SlotDurationXMAC_short_stats_for_SD <- get_stats_for_par_values(SlotDurationBMAC_short_stats,
+SlotDurationXMAC_short_stats_for_SD <- get_stats_for_par_values(SlotDurationXMAC_short_stats,
                                                                 network_sizes,
                                                                 slot_durations,
                                                                 output_file_dir,
@@ -162,3 +162,55 @@ SlotDurationLMAC_short_stats_for_SD <- get_stats_for_par_values(SlotDurationBMAC
                                                                 output_file_dir,
                                                                 file_name_prefix,
                                                                 file_names_suffix)
+
+# -----------------------------------------------------------------------------------------------
+# obliczenie średnich wartości statystyk:
+
+#BMAC  
+slot_durations <- seq(0.01, 0.3, 0.01)
+
+SD_BMAC_short_mean_stats <- calculate_mean_stats_for_par_values(
+  SlotDurationBMAC_short_stats_for_SD, slot_durations, "slot_duration")
+
+
+#XMAC
+slot_durations <- seq(0.01, 0.3, 0.01)
+
+SD_XMAC_short_mean_stats <- calculate_mean_stats_for_par_values(
+  SlotDurationXMAC_short_stats_for_SD, slot_durations, "slot_duration")
+
+
+#LMAC
+slot_durations <- seq(0.05, 0.3, 0.01)
+
+SD_LMAC_short_mean_stats <- calculate_mean_stats_for_par_values(
+  SlotDurationLMAC_short_stats_for_SD, slot_durations, "slot_duration")
+
+
+#wizualizacje średnich wyników:
+mean_stats_plots <- list()
+
+mean_stats_plots[[1]] <- create_line_plot(SD_BMAC_short_mean_stats$slot_duration,
+                                          SD_BMAC_short_mean_stats$mean_packets_received_ratio*100,
+                                          "Wykres średniego ilorazu poprawnie dostarczonych pakietów - BMAC",
+                                          "długość szczeliny czasowej [s]",
+                                          "poprawnie dostarczone pakiety [%]")
+
+mean_stats_plots[[2]] <- create_line_plot(SD_XMAC_short_mean_stats$slot_duration,
+                                          SD_XMAC_short_mean_stats$mean_packets_received_ratio*100,
+                                          "Wykres średniego ilorazu poprawnie dostarczonych pakietów - XMAC",
+                                          "długość szczeliny czasowej [s]",
+                                          "poprawnie dostarczone pakiety [%]")
+
+mean_stats_plots[[3]] <- create_line_plot(SD_LMAC_short_mean_stats$slot_duration,
+                                          SD_LMAC_short_mean_stats$mean_packets_received_ratio*100,
+                                          "Wykres średniego ilorazu poprawnie dostarczonych pakietów - LMAC",
+                                          "długość szczeliny czasowej [s]",
+                                          "poprawnie dostarczone pakiety [%]")
+
+display_plots(mean_stats_plots)
+
+# najlepsze wyniki:
+#   BMAC: SD = 0.04s
+#   XMAC: SD = 0.07s
+#   LMAC: SD = 0.05s
