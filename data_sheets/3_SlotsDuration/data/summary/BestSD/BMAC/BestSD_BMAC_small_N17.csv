@@ -1,0 +1,305 @@
+run;type;module;name;attrname;attrvalue;value
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;configname;BMAC_bestSD_small;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;datetime;20230516-17:46:19;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;datetimef;20230516-174619;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;experiment;BMAC_bestSD_small;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;inifile;omnetpp.ini;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;iterationvars;$N=17;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;iterationvarsd;N=17;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;iterationvarsf;N=17-;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;measurement;$N=17;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;network;SimMAC;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;processid;8664;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;repetition;0;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;replication;#0;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;resultdir;results/BMAC_bestSD_small;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;runnumber;12;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;runattr;;;seedset;12;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;itervar;;;N;17;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;image-path;../../../../../Omnet++/inet4.5/images;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;result-dir;results/BMAC_bestSD_small;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.distFromSensorToSink;20m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.distFromServerToSink;5m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorsTotalNumber;17;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.vector-recording;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.wlan[*].mac.typename;BMac;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.wlan[*].mac.headerLength;1B;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.wlan[*].mac.slotDuration;0.04s;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.wlan[*].queue.typename;DropTailQueue;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;network;SimMAC;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorsType1Number;int(floor(0.5*sensorsTotalNumber));
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorsType2Number;int(floor(0.3*sensorsTotalNumber));
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorsType3Number;sensorsTotalNumber - (sensorsType1Number + sensorsType2Number);
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.distFromSensorToSink;50m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.distFromServerToSink;30m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;sim-time-limit;100s;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.enableVisualisation;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensor*.udp.packetSent:vector(packetBytes).vector-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.server.udp.packetReceived:vector(packetBytes).vector-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.gateway.eth[0].queue.outgoingDataRate:vector.vector-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType*[0].wlan[0].queue.outgoingDataRate:vector.vector-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.energyStorage.residualEnergyCapacity:vector.vector-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.server.app[0].endToEndDelay:vector.vector-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.server.app[0].throughput:vector.vector-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.vector-recording;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.server.udp.packetReceived:count.scalar-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensor*.udp.packetSent:count.scalar-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.residualEnergyCapacity:last.scalar-recording;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.scalar-recording;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.param-recording;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.wlan[*].typename;WirelessInterface;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.wlan[*].radio.typename;ApskScalarRadio;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.arp.typename;GlobalArp;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.netmaskRoutes;"\"\"";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.gateway.forwarding;true;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.maxTransmissionDuration;100ms;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.configurator.config;"xmldoc(\"topology.xml\")";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.configurator.addStaticRoutes;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.mobility.constraintAreaMaxX;500m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.mobility.constraintAreaMinX;0m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.mobility.constraintAreaMaxY;400m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.mobility.constraintAreaMinY;0m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.mobility.constraintAreaMaxZ;0m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.mobility.constraintAreaMinZ;0m;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.mobility.initFromDisplayString;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.radio.centerFrequency;2.45GHz;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.radio.bandwidth;2.8MHz;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.radio.transmitter.bitrate;19200 bps;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.radio.transmitter.headerLength;8b;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.radio.transmitter.preambleDuration;0.0001s;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.radio.transmitter.power;2.24mW;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.radio.receiver.energyDetection;-90dBm;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.radio.receiver.sensitivity;-100dBm;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;**.radio.receiver.snirThreshold;-8dB;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.radioMedium.backgroundNoise.power;-110dBm;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.visualizer.*.routingTableVisualizer.displayRoutingTables;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.visualizer.*.routingTableVisualizer.displayRoutesIndividually;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.visualizer.*.routingTableVisualizer.lineShift;0;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.visualizer.*.routingTableVisualizer.displayLabels;false;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.visualizer.*.infoVisualizer.modules;"\"*.server.app[0]\"";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.visualizer.*.infoVisualizer.format;"\"%t\"";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType1*.numApps;1;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType1*.app[*].typename;UdpBasicApp;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType1*.app[*].destAddresses;"\"server\"";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType1*.app[*].destPort;1000;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType1*.app[*].sendInterval;1s;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType1*.app[*].startTime;exponential(1s);
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType1*.app[*].messageLength;25Byte;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType1*.app[*].packetName;"\"Type1SensorData\"";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType2*.numApps;1;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType2*.app[*].typename;UdpBasicApp;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType2*.app[*].destAddresses;"\"server\"";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType2*.app[*].destPort;1000;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType2*.app[*].sendInterval;uniform(0.2s,0.5s);
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType2*.app[*].startTime;exponential(1s);
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType2*.app[*].messageLength;10Byte;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType2*.app[*].packetName;"\"Type2SensorData\"";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType3*.numApps;1;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType3*.app[*].typename;UdpBasicApp;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType3*.app[*].destAddresses;"\"server\"";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType3*.app[*].destPort;1000;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType3*.app[*].sendInterval;5s;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType3*.app[*].startTime;exponential(1s);
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType3*.app[*].messageLength;40Byte;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.sensorType3*.app[*].packetName;"\"Type3SensorData\"";
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.server.numApps;1;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.server.app[0].typename;UdpSink;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;config;;;*.server.app[0].localPort;1000;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;;;-1.3669047915513
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[0].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[0].udp;packetSent:count;;;100
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[0].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[0].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[0].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[0].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;;;-1.3731713811899
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[1].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[1].udp;packetSent:count;;;98
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[1].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[1].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[1].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[1].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;;;-1.3736574586966
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[2].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[2].udp;packetSent:count;;;100
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[2].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[2].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[2].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[2].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;;;-1.3936983472991
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[3].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[3].udp;packetSent:count;;;99
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[3].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[3].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[3].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[3].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;;;-1.3742231864774
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[4].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[4].udp;packetSent:count;;;100
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[4].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[4].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[4].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[4].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;;;-1.4233570415861
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[5].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[5].udp;packetSent:count;;;100
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[5].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[5].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[5].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[5].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;;;-1.3811559275918
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[6].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[6].udp;packetSent:count;;;100
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[6].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[6].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[6].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[6].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;;;-1.4187872424524
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[7].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType1[7].udp;packetSent:count;;;100
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[7].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[7].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[7].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType1[7].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;;;-1.7288644889296
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[0].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[0].udp;packetSent:count;;;291
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[0].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[0].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[0].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[0].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;;;-1.7358358577988
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[1].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[1].udp;packetSent:count;;;283
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[1].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[1].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[1].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[1].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;;;-1.775104776871
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[2].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[2].udp;packetSent:count;;;275
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[2].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[2].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[2].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[2].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;;;-1.7351813706565
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[3].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[3].udp;packetSent:count;;;275
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[3].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[3].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[3].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[3].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;;;-1.7347238134326
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[4].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType2[4].udp;packetSent:count;;;289
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[4].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[4].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[4].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType2[4].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;;;-1.2148765108992
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[0].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType3[0].udp;packetSent:count;;;20
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[0].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[0].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[0].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[0].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;;;-1.2140198550933
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[1].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType3[1].udp;packetSent:count;;;20
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[1].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[1].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[1].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[1].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;;;-1.2319036659518
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[2].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType3[2].udp;packetSent:count;;;20
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[2].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[2].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[2].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[2].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;;;-1.2300393952135
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[3].energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.sensorType3[3].udp;packetSent:count;;;20
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[3].udp;packetSent:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[3].udp;packetSent:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[3].udp;packetSent:count;source;packetSent;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.sensorType3[3].udp;packetSent:count;title;packets sent, count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;;;-1.1911406252292
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;interpolationmode;linear;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;recordingmode;last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;source;residualEnergyCapacityChanged;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;title;Residual energy capacity, last;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.gateway.energyStorage;residualEnergyCapacity:last;unit;J;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;scalar;SimMAC.server.udp;packetReceived:count;;;966
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.server.udp;packetReceived:count;interpolationmode;none;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.server.udp;packetReceived:count;recordingmode;count;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.server.udp;packetReceived:count;source;packetReceived;
+BMAC_bestSD_small-12-20230516-17:46:19-8664;attr;SimMAC.server.udp;packetReceived:count;title;packets received, count;

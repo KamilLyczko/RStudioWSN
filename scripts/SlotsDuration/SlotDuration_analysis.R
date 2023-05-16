@@ -192,13 +192,13 @@ mean_stats_plots <- list()
 
 mean_stats_plots[[1]] <- create_line_plot(SD_BMAC_short_mean_stats$slot_duration,
                                           SD_BMAC_short_mean_stats$mean_packets_received_ratio*100,
-                                          "Wykres średniego ilorazu poprawnie dostarczonych pakietów - BMAC",
+                                          "Wykres średniego ilorazu poprawnie dostarczonych pakietów - B-MAC",
                                           "długość szczeliny czasowej [s]",
                                           "poprawnie dostarczone pakiety [%]")
 
 mean_stats_plots[[2]] <- create_line_plot(SD_XMAC_short_mean_stats$slot_duration,
                                           SD_XMAC_short_mean_stats$mean_packets_received_ratio*100,
-                                          "Wykres średniego ilorazu poprawnie dostarczonych pakietów - XMAC",
+                                          "Wykres średniego ilorazu poprawnie dostarczonych pakietów - X-MAC",
                                           "długość szczeliny czasowej [s]",
                                           "poprawnie dostarczone pakiety [%]")
 
