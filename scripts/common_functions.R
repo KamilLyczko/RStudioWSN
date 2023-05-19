@@ -14,7 +14,6 @@ save_data <- function(data_obj, output_file_path) {
 }
 
 
-
 # -----------------------------------------------------------------------------------------------
 # funkcje generujące wykresy
 
@@ -177,6 +176,27 @@ get_scalars_for_par_value <- function(scalars, par_value) {
   data_subset <- subset(scalars, (par_name == as.character(par_value)))
   colnames(data_subset) <- col_names_original
   return(data_subset)
+}
+
+
+# funkcja rozdziela podaną jako argument ramkę danych na wiele ramek względem numerów kolumn
+# wynikowa lista zawiera ramki danych zawierające po dwie kolumny
+# funkcja służy do utworzenia ramek danych z wektorami (szeregami czasowymi) na podstawie 
+#       podanej ramki danych z wynikami symulacji w Omnet++
+split_vector_data <- function(vector_data, data_names_vec) {
+  vectors_list <- list()
+  for(i in 1:length(data_names_vec)) {
+    start_ind <- 2*i - 1
+    end_ind <- start_ind + 1
+    vectors_list[[i]] <- na.omit(vector_data[,start_ind:end_ind])
+    colnames(vectors_list[[i]]) <- c("t", data_names_vec[i])
+  }
+  return(vectors_list)
+}
+
+# funkcja zwraca ramkę danych z wartościami szeregu czasowego z podanego przedziału czasu
+get_ts_window <- function (ts_df, start_time, end_time) {
+  ts_window <- subset(ts_df, (t >= start_time & t < end_time))
 }
 
 
