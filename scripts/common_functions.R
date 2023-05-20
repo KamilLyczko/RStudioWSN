@@ -26,6 +26,75 @@ create_line_plot <- function(x_vector, y_vector, title="", x_label = "", y_label
     labs(title = title, x = x_label, y = y_label)
 }
 
+# funkcja generuje wykres liniowy dla pojedynczej pary wektorów x i y
+# funkcja przeznaczona dla długich wektorów - ograniczenie liczby etykiet na osi x
+create_line_plot2 <- function(x_vector, y_vector, title="", x_label = "", y_label = "") {
+  x_range <- max(x_vector) - min(x_vector)
+  break_length <- round(x_range/10)
+  breaks_vec <- seq(min(x_vector), max(x_vector), break_length)
+  ggplot(data = data.frame(x = x_vector, y = y_vector), aes(x, y)) + 
+    geom_line() + geom_point() +
+    scale_x_continuous(breaks = breaks_vec) +
+    labs(title = title, x = x_label, y = y_label)
+}
+
+# funkcja generuje wykres dla pojedynczej pary wektorów x i y
+# funkcja przeznaczona dla długich wektorów - ograniczenie liczby etykiet na osi x
+# dane wizualizowane są w postaci słupków
+create_ts_plot_bar <- function(x_vector, y_vector, title="", x_label = "", y_label = "") {
+  x_range <- max(x_vector) - min(x_vector)
+  break_length <- round(x_range/10)
+  breaks_vec <- seq(min(x_vector), max(x_vector), break_length)
+  ggplot(data = data.frame(x = x_vector, y = y_vector), aes(x, y)) + 
+    geom_bar(stat="identity", fill="#3da9fc") +
+    scale_x_continuous(breaks = breaks_vec) +
+    labs(title = title, x = x_label, y = y_label)
+}
+
+# funkcja generuje wykres dla pojedynczej pary wektorów x i y
+# funkcja przeznaczona dla długich wektorów - ograniczenie liczby etykiet na osi x
+# dane wizualizowane są w postaci segmentów (słupków)
+create_ts_plot_segment <- function(x_vector, y_vector, title="", x_label = "", y_label = "") {
+  x_range <- max(x_vector) - min(x_vector)
+  break_length <- round(x_range/10)
+  breaks_vec <- seq(min(x_vector), max(x_vector), break_length)
+  ggplot(data = data.frame(x = x_vector, y = y_vector), aes(x)) + 
+    geom_segment(aes(x=x_vector,
+                     xend=x_vector,
+                     y=0,
+                     yend=y_vector),
+                 colour="#3da9fc") +
+    scale_x_continuous(breaks = breaks_vec) +
+    labs(title = title, x = x_label, y = y_label)
+}
+
+# funkcja generuje wykres dla pojedynczej pary wektorów x i y
+# funkcja przeznaczona dla długich wektorów - ograniczenie liczby etykiet na osi x
+# funkcja generuje odpowiedni typ wykresy na podstawie wartości argumentu type
+create_ts_plot <- function(x_vector, y_vector, type="line", 
+                              title="", x_label = "", y_label = "") {
+  x_range <- max(x_vector) - min(x_vector)
+  break_length <- round(x_range/10)
+  breaks_vec <- seq(min(x_vector), max(x_vector), break_length)
+  plot_obj <- ggplot(data = data.frame(x = x_vector, y = y_vector), aes(x, y)) +
+                  scale_x_continuous(breaks = breaks_vec) +
+                  labs(title = title, x = x_label, y = y_label)
+  if (type == "bar") {
+    plot_obj <- plot_obj + geom_bar(stat="identity", fill="#3da9fc")
+  }
+  else if (type == "segment") {
+    plot_obj <- plot_obj + geom_segment(aes(x=x_vector,
+                                            xend=x_vector,
+                                            y=0,
+                                            yend=y_vector),
+                                        colour="#3da9fc")
+  }
+  else {
+    plot_obj <- plot_obj + geom_line() + geom_point()
+  }
+  return(plot_obj)
+}
+
 # funkcja wyświetlająca wykresy
 display_plots <- function(plots_list) {
   for (plot_object in plots_list) {
@@ -197,6 +266,41 @@ split_vector_data <- function(vector_data, data_names_vec) {
 # funkcja zwraca ramkę danych z wartościami szeregu czasowego z podanego przedziału czasu
 get_ts_window <- function (ts_df, start_time, end_time) {
   ts_window <- subset(ts_df, (t >= start_time & t < end_time))
+}
+
+
+#funkcja tworzy szeregi czasowe liczb oraz sumarycznych rozmiarów pakietów zarejestrowanych 
+#   w kolejnych oknach czasowych o podanej szerokości (s)
+create_packet_received_ts_dfs <- function(packet_received_vector, time_vector, window_size = 1) {
+  ts_df <- data.frame(time_vector, packet_received_vector)
+  colnames(ts_df) <- c("t", "packet_received")
+  windows_size <- as.numeric(window_size)
+  windows_count <- ceil(max(time_vector)/window_size)
+  packet_nums_ts_df <- data.frame(matrix(ncol = 3, nrow = 0))
+  packet_sizes_ts_df <- data.frame(matrix(ncol = 3, nrow = 0))
+  for (window_num in 1:windows_count) {
+    start_t <- (window_num - 1) * window_size
+    end_t <- start_t + window_size
+    ts_window <- get_ts_window(ts_df, start_t, end_t)
+    packets_number <- length(ts_window$packet_received)
+    packets_total_size <- sum(ts_window$packet_received)
+    df_row <- data.frame(window_num, end_t, packets_number)
+    packet_nums_ts_df <- rbind(packet_nums_ts_df, df_row)
+    df_row <- data.frame(window_num, end_t, packets_total_size)
+    packet_sizes_ts_df <- rbind(packet_sizes_ts_df, df_row)
+  }
+  colnames(packet_nums_ts_df) <- c("window_number", "window_end_time", "packets_number")
+  colnames(packet_sizes_ts_df) <- c("window_number", "window_end_time", "total_packets_size")
+  final_ts_list <- list(packet_nums_ts_df, packet_sizes_ts_df)
+  return(final_ts_list)
+}
+
+#funkcja zwraca ramkę danych z wektorami czasów nadejścia kolejnych pakietów
+create_packet_arrival_time_df <- function(time_vector) {
+  packet_number_vec <- 1:length(time_vector)
+  df <- data.frame(packet_number = packet_number_vec,
+                   arrival_time = time_vector,
+                   arrival_time_diff = c(NA, diff(time_vector)))
 }
 
 

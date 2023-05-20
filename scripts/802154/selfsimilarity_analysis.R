@@ -11,7 +11,28 @@ vectors_names <- c("gateway_data_rate",
                    "server_delay")
 
 ts_data <- split_vector_data(N5_data, vectors_names)
-#test_window <- get_ts_window(ts_data[[4]], 0, 100)
+
+packet_received_ts_dfs <- create_packet_received_ts_dfs(ts_data[[2]]$server_packet_received,
+                                                        ts_data[[2]]$t, 1)
+
+packet_nums_plot <-create_ts_plot(packet_received_ts_dfs[[1]]$window_end_time,
+                                  packet_received_ts_dfs[[1]]$packets_number,
+                                  "bar")
+
+packet_sizes_plot <- create_ts_plot(packet_received_ts_dfs[[2]]$window_end_time,
+                                    packet_received_ts_dfs[[2]]$total_packets_size,
+                                    "bar")
+
+plot(packet_nums_plot)
+plot(packet_sizes_plot)
+
+arrival_time_df <- create_packet_arrival_time_df(ts_data[[2]]$t)
+arrival_time_plot <- create_line_plot2(arrival_time_df$packet_number,
+                                       arrival_time_df$arrival_time)
+arrival_time_diff_plot <- create_line_plot2(arrival_time_df$packet_number,
+                                            arrival_time_df$arrival_time_diff)
+plot(arrival_time_plot)
+plot(arrival_time_diff_plot)
 
 
 
