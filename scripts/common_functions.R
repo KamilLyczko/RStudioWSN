@@ -8,11 +8,45 @@ load_data <- function(input_file_path) {
   return(data_obj)
 }
 
+# funkcja wczytuje z plików dane dotyczące zapisanych w nich wektorów
+load_vector_data <- function(vector_names,
+                             input_data_dir, 
+                             file_name_prefix, 
+                             file_nums, 
+                             file_name_suffix=".csv") {
+  data_list <- list()
+  for (i in 1:length(file_nums)) {
+    file_path <- paste0(input_data_dir, file_name_prefix, file_nums[i], file_name_suffix)
+    raw_data <- load_data(file_path)
+    vector_data <- split_vector_data(raw_data, vector_names)
+    data_list[[i]] <- vector_data
+  }
+  return(data_list)
+}
+
 # funkcja zapisuje dane z podanej ramki do pliku o podanej ścieżce
 save_data <- function(data_obj, output_file_path) {
   write.csv2(data_obj, output_file_path, row.names=FALSE)
 }
 
+# funkcja zapisuje dane z podanej listy ramek do plików o podanych ścieżkach
+save_data_list <- function(data_obj_list, output_file_path_vector) {
+  for (i in 1:length(data_obj_list)) {
+    save_data(data_obj_list[[i]], output_file_path_vector[i])
+  }
+}
+
+# funkcja zapisuje do plików ramki danych z podanej listy
+save_df_list <- function(dfs_list,
+                         output_data_dir, 
+                         file_name_prefix, 
+                         file_nums, 
+                         file_name_suffix=".csv") {
+  for (i in 1:length(dfs_list)) {
+    file_path <- paste0(output_data_dir, file_name_prefix, file_nums[i], file_name_suffix)
+    save_data(dfs_list[[i]], file_path)
+  }
+}
 
 # -----------------------------------------------------------------------------------------------
 # funkcje generujące wykresy
@@ -76,6 +110,7 @@ create_ts_plot <- function(x_vector, y_vector, type="line",
   x_range <- max(x_vector) - min(x_vector)
   break_length <- round(x_range/10)
   breaks_vec <- seq(min(x_vector), max(x_vector), break_length)
+  breaks_vec[length(breaks_vec)+1] <- max(x_vector)
   plot_obj <- ggplot(data = data.frame(x = x_vector, y = y_vector), aes(x, y)) +
                   scale_x_continuous(breaks = breaks_vec) +
                   labs(title = title, x = x_label, y = y_label)
@@ -150,6 +185,39 @@ create_multiple_line_plot_from_df <- function(df_with_x_and_ys,
     geom_point() +
     scale_x_continuous(breaks = df_with_x_and_ys[[1]]) +
     labs(title = title, x = x_label, y = y_label, color = legend_label)
+}
+
+# funkcja zwraca obiekt wykresu tworzonego dla danych zawartych w przekazywanej jako argument
+#   ramce danych
+# funkcja przeznaczona do wizualizacji danych dla długich szeregów czasowych
+create_multiple_ts_plot_from_df <- function(df_with_x_and_ys,
+                                            type = "line",
+                                            title = "", x_label = "", 
+                                            y_label = "", legend_label = "") {
+  reversed_data <- df_with_x_and_ys[, ncol(df_with_x_and_ys):2]
+  new_df <- cbind(df_with_x_and_ys[1], reversed_data)
+  col_names <- colnames(new_df)
+  df_long <- melt(new_df, id = "x")
+  min_x <- min(new_df[1])
+  max_x <- max(new_df[1])
+  x_range <- max_x - min_x
+  break_length <- round(x_range/10)
+  breaks_vec <- seq(min_x, max_x, break_length)
+  breaks_vec[length(breaks_vec)+1] <- max_x
+  plot_obj <- ggplot(df_long, aes(x = x, y = value, color = variable)) + 
+                  scale_x_continuous(breaks = breaks_vec) +
+                  labs(title = title, x = x_label, y = y_label, color = legend_label)
+  if (type == "segment") {
+    plot_obj <- plot_obj + geom_segment(aes(x=x,
+                                            xend=x,
+                                            y=0,
+                                            yend=value))
+  }
+  else {
+    plot_obj <- plot_obj + geom_line() + geom_point()
+  }
+  plot_obj <- plot_obj + guides(color = guide_legend(reverse = TRUE))
+  return(plot_obj)
 }
 
 # ----------------------------------------------------------------------------------------------
@@ -271,28 +339,24 @@ get_ts_window <- function (ts_df, start_time, end_time) {
 
 #funkcja tworzy szeregi czasowe liczb oraz sumarycznych rozmiarów pakietów zarejestrowanych 
 #   w kolejnych oknach czasowych o podanej szerokości (s)
-create_packet_received_ts_dfs <- function(packet_received_vector, time_vector, window_size = 1) {
+create_packet_received_ts_df <- function(packet_received_vector, time_vector, window_size = 1) {
   ts_df <- data.frame(time_vector, packet_received_vector)
   colnames(ts_df) <- c("t", "packet_received")
   windows_size <- as.numeric(window_size)
   windows_count <- ceil(max(time_vector)/window_size)
-  packet_nums_ts_df <- data.frame(matrix(ncol = 3, nrow = 0))
-  packet_sizes_ts_df <- data.frame(matrix(ncol = 3, nrow = 0))
+  packet_received_ts_df <- data.frame(matrix(ncol = 4, nrow = 0))
   for (window_num in 1:windows_count) {
     start_t <- (window_num - 1) * window_size
     end_t <- start_t + window_size
     ts_window <- get_ts_window(ts_df, start_t, end_t)
     packets_number <- length(ts_window$packet_received)
     packets_total_size <- sum(ts_window$packet_received)
-    df_row <- data.frame(window_num, end_t, packets_number)
-    packet_nums_ts_df <- rbind(packet_nums_ts_df, df_row)
-    df_row <- data.frame(window_num, end_t, packets_total_size)
-    packet_sizes_ts_df <- rbind(packet_sizes_ts_df, df_row)
+    df_row <- data.frame(window_num, end_t, packets_number, packets_total_size)
+    packet_received_ts_df <- rbind(packet_received_ts_df, df_row)
   }
-  colnames(packet_nums_ts_df) <- c("window_number", "window_end_time", "packets_number")
-  colnames(packet_sizes_ts_df) <- c("window_number", "window_end_time", "total_packets_size")
-  final_ts_list <- list(packet_nums_ts_df, packet_sizes_ts_df)
-  return(final_ts_list)
+  colnames(packet_received_ts_df) <- 
+    c("window_number", "window_end_time", "packets_number", "total_packets_size")
+  return(packet_received_ts_df)
 }
 
 #funkcja zwraca ramkę danych z wektorami czasów nadejścia kolejnych pakietów
