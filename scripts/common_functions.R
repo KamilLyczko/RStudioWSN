@@ -178,7 +178,6 @@ create_stats_visualizations <- function(stats_df,
 create_multiple_line_plot_from_df <- function(df_with_x_and_ys,
                                       title = "", x_label = "", 
                                       y_label = "", legend_label = "") {
-  col_names <- colnames(df_with_x_and_ys)
   df_long <- melt(df_with_x_and_ys, id = "x")
   ggplot(df_long, aes(x = x, y = value, color = variable)) + 
     geom_line() +

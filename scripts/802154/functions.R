@@ -40,3 +40,22 @@ create_comparison_df <- function(df_list, df_y_labels, colum_name) {
   colnames(comp_df) <- col_names
   return(comp_df)
 }
+
+# zwraca wartości współczynnka Hurst'a obliczone dla podanego szeregu wartości przez funkcję hurstexp
+# wynik zwracany jest w postaci ramki danych
+calculate_hurst_exponent <- function(ts) {
+  hurst_exp_list <- hurstexp(ts)
+  return(data.frame(hurst_exp_list))
+}
+
+# funkcja tworzy ramkę danych z wartościami współczynnika Hurst'a obliczonymi dla szeregów z listy
+calculate_hurst_exponents_for_list <- function(packet_received_ts_dfs, network_sizes) {
+  hurst_df <- calculate_hurst_exponent(packet_received_ts_dfs[[1]]$total_packets_size)
+  for (i in 2:length(packet_received_ts_dfs)) {
+    df <- calculate_hurst_exponent(packet_received_ts_dfs[[i]]$total_packets_size)
+    hurst_df <- rbind(hurst_df, df)
+  }
+  network_sizes_df <- data.frame(N = network_sizes)
+  hurst_df <- cbind(network_sizes_df, hurst_df)
+  return(hurst_df)
+}
