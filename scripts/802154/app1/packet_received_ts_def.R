@@ -67,3 +67,16 @@ display_plots(comp_plots)
 
 
 
+# czyszczenie środowiska
+rm(input_data_dir)
+rm(file_name_prefix)
+rm(file_nums)
+rm(vectors_names)
+rm(vector_data)
+rm(packet_received_dir)
+rm(network_sizes)
+rm(packet_received_comp_range1)
+rm(packet_received_comp_range2)
+
+
+
