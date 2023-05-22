@@ -1,4 +1,4 @@
-# funkcja zwraca listę z ramkami danych dotyczących szeregów czasowych otrzymanych pakietów
+# funkcja zwraca listę z ramkami danych dotyczącymi szeregów czasowych otrzymanych pakietów
 #   wyznaczonych dla podanego okna czasowego
 get_packet_received_ts_dfs <- function(vector_data_list, window_size) {
   packet_received_ts_list <- list()
@@ -11,6 +11,18 @@ get_packet_received_ts_dfs <- function(vector_data_list, window_size) {
     packet_received_ts_list[[i]] <- packet_received_ts_df
   }
   return(packet_received_ts_list)
+}
+
+# funkcja zwraca listę z ramkami danych wektorów o podanym numerze (w liście z wektorami)
+get_vector_ts_dfs <- function(vector_data_list, vector_number, network_sizes) {
+  ts_list <- list()
+  for (i in 1:length(vector_data_list)) {
+    data_vec <- vector_data_list[[i]][[vector_number]][2]
+    time_vec <- vector_data_list[[i]][[vector_number]][1]
+    ts_df <- cbind(time_vec, data_vec)
+    ts_list[[i]] <- ts_df
+  }
+  return(ts_list)
 }
 
 # funkcja zwraca listę z obiektami wykresów liczb otrzymanych pakietów
