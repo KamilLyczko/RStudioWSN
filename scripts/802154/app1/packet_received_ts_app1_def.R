@@ -46,21 +46,21 @@ comp_plots[[1]] <- create_multiple_ts_plot_from_df(packet_received_comp_df,
                                                    "segment",
                                                    "Zestawienie liczb otrzymywanych pakietów",
                                                    "czas [s]",
-                                                   "liczba pakietów [b]",
+                                                   "liczba pakietów [B]",
                                                    "Liczba sensorów w sieci:")
 
 comp_plots[[2]] <- create_multiple_ts_plot_from_df(packet_received_comp_range1,
                                                    "segment",
                                                    "Zestawienie liczb otrzymywanych pakietów",
                                                    "czas [s]",
-                                                   "liczba pakietów [b]",
+                                                   "liczba pakietów [B]",
                                                    "Liczba sensorów w sieci:")
 
 comp_plots[[3]] <- create_multiple_ts_plot_from_df(packet_received_comp_range2,
                                                    "segment",
                                                    "Zestawienie liczb otrzymywanych pakietów",
                                                    "czas [s]",
-                                                   "liczba pakietów [b]",
+                                                   "liczba pakietów [B]",
                                                    "Liczba sensorów w sieci:")
 
 display_plots(comp_plots)

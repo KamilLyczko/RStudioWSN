@@ -1,3 +1,4 @@
+# aplikacja nr 1
 # obliczenie wartości współczynników
 network_sizes <- seq(5, 20, 1)
 
