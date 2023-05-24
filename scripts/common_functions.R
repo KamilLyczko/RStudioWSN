@@ -335,6 +335,21 @@ get_ts_window <- function (ts_df, start_time, end_time) {
   ts_window <- subset(ts_df, (t >= start_time & t < end_time))
 }
 
+# funkcja zwraca wektor z wartościami szeregu czasowego z podanego przedziału czasu
+get_ts_window_vector <- function (ts_df, start_time, end_time) {
+  get_ts_window(ts_df, start_time, end_time)[[2]]
+}
+
+# funkcja zwraca ramkę danych zawierającą dwie kolumny: wektor czasu i danych
+# zwracana ramka danych jest tworzona z odpowiednich kolumn podawanej jako argument ramki danych
+create_ts_df <- function(data_df, time_index, data_index) {
+  result_df <- data.frame(data_df[[time_index]], data_df[[data_index]])
+  data_df_col_names <- colnames(data_df)
+  result_col_names <- c("t", data_df_col_names[data_index])
+  colnames(result_df) <- result_col_names
+  return(result_df)
+}
+
 
 #funkcja tworzy szeregi czasowe liczb oraz sumarycznych rozmiarów pakietów zarejestrowanych 
 #   w kolejnych oknach czasowych o podanej szerokości (s)

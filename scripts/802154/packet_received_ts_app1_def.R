@@ -13,11 +13,11 @@ vector_data <- load_vector_data(vectors_names,
                                 file_nums)
 
 # utworzenie ramek danych z wektorami dotyczącymi pakietów otrzymanych w czasie każdej sekundy
-packet_received_ts_dfs <- get_packet_received_ts_dfs(vector_data, 2, 1)
+packet_received_app1_ts_dfs <- get_packet_received_ts_dfs(vector_data, 2, 1)
 
 # zapisanie utworzonych szeregów do plików
 packet_received_dir <- "data_sheets/4_802154/data/packet_received_vectors/app1/"
-save_df_list(packet_received_ts_dfs,
+save_df_list(packet_received_app1_ts_dfs,
              packet_received_dir,
              file_name_prefix,
              file_nums,
@@ -27,12 +27,12 @@ save_df_list(packet_received_ts_dfs,
 # wizualizacja liczb otrzymanych pakietów
 network_sizes <- seq(5, 20, 1)
 
-packet_received_plots <- create_packet_received_sizes_plots(packet_received_ts_dfs,
+packet_received_plots <- create_packet_received_sizes_plots(packet_received_app1_ts_dfs,
                                                             network_sizes)
 
 display_plots(packet_received_plots)
 
-packet_received_comp_df <- create_comparison_df(packet_received_ts_dfs,
+packet_received_comp_df <- create_comparison_df(packet_received_app1_ts_dfs,
                                                 network_sizes,
                                                 "total_packets_size")
 
