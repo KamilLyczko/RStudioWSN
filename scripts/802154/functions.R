@@ -56,7 +56,7 @@ create_comparison_df <- function(df_list, df_y_labels, colum_name) {
 # zwraca wartości współczynnka Hurst'a obliczone dla podanego szeregu wartości przez funkcję hurstexp
 # wynik zwracany jest w postaci ramki danych
 calculate_hurst_exponent <- function(ts) {
-  hurst_exp_list <- hurstexp(ts)
+  hurst_exp_list <- hurstexp(ts, display = FALSE)
   return(data.frame(hurst_exp_list))
 }
 
