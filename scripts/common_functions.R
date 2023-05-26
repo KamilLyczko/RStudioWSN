@@ -340,6 +340,16 @@ get_ts_window_vector <- function (ts_df, start_time, end_time) {
   get_ts_window(ts_df, start_time, end_time)[[2]]
 }
 
+# funkcja zwraca listę z ramkami danych z wartościami szeregów czasowych z podanego 
+#       przedziału czasu
+get_multiple_ts_window <- function (ts_dfs, start_time, end_time) {
+  ts_windows <- list()
+  for (i in 1:length(ts_dfs)) {
+    ts_windows[[i]] <- get_ts_window(ts_dfs[[i]], start_time, end_time)
+  }
+  return(ts_windows)
+}
+
 # funkcja zwraca ramkę danych zawierającą dwie kolumny: wektor czasu i danych
 # zwracana ramka danych jest tworzona z odpowiednich kolumn podawanej jako argument ramki danych
 create_ts_df <- function(data_df, time_index, data_index) {
@@ -348,6 +358,15 @@ create_ts_df <- function(data_df, time_index, data_index) {
   result_col_names <- c("t", data_df_col_names[data_index])
   colnames(result_df) <- result_col_names
   return(result_df)
+}
+
+# funkcja zwraca listę z ramkami danych szeregów czasowych
+create_ts_dfs <- function(data_dfs_list, time_index, data_index) {
+  ts_list <- list()
+  for (i in 1:length(data_dfs_list)) {
+    ts_list[[i]] <- create_ts_df(data_dfs_list[[i]], time_index, data_index)
+  }
+  return(ts_list)
 }
 
 

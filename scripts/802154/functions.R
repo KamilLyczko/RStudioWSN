@@ -71,3 +71,16 @@ calculate_hurst_exponents_for_list <- function(packet_received_ts_dfs, network_s
   hurst_df <- cbind(network_sizes_df, hurst_df)
   return(hurst_df)
 }
+
+# funkcja tworzy ramkę danych z wartościami współczynnika Hurst'a obliczonymi dla szeregów z listy
+# ramki danych w liście zawierają jedynie dwie kolumny
+calculate_hurst_exponents_for_ts_list <- function(ts_dfs, network_sizes) {
+  hurst_df <- calculate_hurst_exponent(ts_dfs[[1]][[2]])
+  for (i in 2:length(ts_dfs)) {
+    df <- calculate_hurst_exponent(ts_dfs[[i]][[2]])
+    hurst_df <- rbind(hurst_df, df)
+  }
+  network_sizes_df <- data.frame(N = network_sizes)
+  hurst_df <- cbind(network_sizes_df, hurst_df)
+  return(hurst_df)
+}
