@@ -84,3 +84,50 @@ calculate_hurst_exponents_for_ts_list <- function(ts_dfs, network_sizes) {
   hurst_df <- cbind(network_sizes_df, hurst_df)
   return(hurst_df)
 }
+
+# funkcja zwraca parametry widma multifraktalnego obliczone przez funkcję MFDFA() dla podanego
+#       jednowymiarowego szeregu czasowego
+get_multifractal_spectrum <- function(ts_values_vec) {
+  mfdfa_obj <- MFDFA(ts_values_vec,
+                     scale = c(8,16,32,64,128, 256, 512),
+                     q=c(-9,-7,-5,-3,-1,1,3,5,7,9))
+  spec <- data.frame(alpha = mfdfa_obj$spec$hq,
+                         dimension = mfdfa_obj$spec$Dq)
+  return(spec)
+}
+
+# funkcja zwraca listę z parametrami widm multifraktalnych obliczonych dla szeregów z podanej 
+#       listy
+get_multifractal_spectrums_for_list <- function(ts_dfs) {
+  specs <- list()
+  for (i in 1:length(ts_dfs)) {
+    specs[[i]] <- get_multifractal_spectrum(ts_dfs[[i]][[2]])
+  }
+  return(specs)
+}
+
+# funkcja zwraca obiekt wykresu widma multifraktalnego
+create_multifractal_spectrum_plot <- function(spec_df, title = "") {
+  ggplot(data = spec_df, aes(alpha, dimension)) +
+    geom_point() + geom_path() +
+    labs(title = title, x = "α", y = "dim(α)")
+}
+
+# funkcja tworzy obiekt wykresu z wieloma widmami multifraktalnymi
+create_multiple_multifractal_spectrum_plot <- function(spec_dfs_list, 
+                                                       network_sizes, 
+                                                       title = "") {
+  long_df <- data.frame(matrix(ncol = 3, nrow = 0))
+  for(i in 1:length(spec_dfs_list)) {
+    long_df <- rbind(long_df, data.frame(rep(network_sizes[i], length(spec_dfs_list[[i]][[1]])),
+                                         spec_dfs_list[[i]][[1]],
+                                         spec_dfs_list[[i]][[2]]))
+  }
+  colnames(long_df) <- c("size", "x", "y")
+  plot_obj <- ggplot() +
+    geom_path(data = long_df,
+              aes(x = x, y = y, group = size, colour = factor(size))) +
+    scale_color_discrete() +
+    labs(title = title, x = "α", y = "dim(α)", color = "Liczba sensorów:")
+  return(plot_obj)
+}

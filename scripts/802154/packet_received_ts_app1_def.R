@@ -2,10 +2,11 @@
 input_data_dir <- "data_sheets/4_802154/data/original_vectors/app1/"
 file_name_prefix <- "sim802154_app1_N"
 file_nums <- seq(5, 20, 1)
-vectors_names <- c("server_throughput",
-                   "server_packet_received",
+vectors_names <- c("server_delay",
                    "gateway_data_rate",
-                   "server_delay")
+                   "server_packet_received",
+                   "server_throughput"
+                   )
 
 vector_data <- load_vector_data(vectors_names,
                                 input_data_dir,
@@ -13,7 +14,7 @@ vector_data <- load_vector_data(vectors_names,
                                 file_nums)
 
 # utworzenie ramek danych z wektorami dotyczącymi pakietów otrzymanych w czasie każdej sekundy
-packet_received_app1_ts_dfs <- get_packet_received_ts_dfs(vector_data, 2, 1)
+packet_received_app1_ts_dfs <- get_packet_received_ts_dfs(vector_data, 3, 1)
 
 # zapisanie utworzonych szeregów do plików
 packet_received_dir <- "data_sheets/4_802154/data/packet_received_vectors/app1/"
