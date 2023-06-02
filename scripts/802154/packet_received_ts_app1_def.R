@@ -45,7 +45,7 @@ packet_received_comp_range2 <- cbind(packet_received_comp_df[1],
 comp_plots <- list()
 comp_plots[[1]] <- create_multiple_ts_plot_from_df(packet_received_comp_df,
                                                    "segment",
-                                                   "Zestawienie liczb otrzymywanych pakietów",
+                                                   "Zestawienie liczb otrzymywanych pakietów - aplikacja nr 1",
                                                    "czas [s]",
                                                    "liczba pakietów [B]",
                                                    "Liczba sensorów w sieci:")
