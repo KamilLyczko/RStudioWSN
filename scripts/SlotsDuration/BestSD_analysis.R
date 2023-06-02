@@ -155,3 +155,27 @@ MAC_summary_plots[[2]] <-
 
 display_plots(MAC_summary_plots)
 
+
+#---------------------------------
+mean_energy_utilization <- data.frame("B-MAC" = mean(BestSD_BMAC_small_stats$total_energy_utilization),
+                                     "X-MAC" = mean(BestSD_XMAC_small_stats$total_energy_utilization),
+                                     "LMAC" = mean(BestSD_LMAC_small_stats$total_energy_utilization),
+                                     check.names = FALSE)
+
+mean_energy_utilization_p <- data.frame("B-MAC" = mean_energy_utilization[[1]]/mean_energy_utilization[[1]]*100,
+                                        "X-MAC" = mean_energy_utilization[[2]]/mean_energy_utilization[[1]]*100,
+                                        "LMAC" = mean_energy_utilization[[3]]/mean_energy_utilization[[1]]*100,
+                                        check.names = FALSE)
+
+mean_ut_vec <- c(mean_energy_utilization_p[[1]], 
+                 mean_energy_utilization_p[[2]],
+                 mean_energy_utilization_p[[3]])
+names <- c("B-MAC", "X-MAC", "LMAC")
+
+energy_plot <- ggplot(data = data.frame(x=names, y=mean_ut_vec), aes(x,y)) + 
+  geom_bar(stat="identity", width=0.3) + labs(title = "Zestawienie względnego średniego zużycia energii",
+                                              x = "protokół",
+                                              y = "średnie zużycie energii [%]")
+
+plot(energy_plot)
+

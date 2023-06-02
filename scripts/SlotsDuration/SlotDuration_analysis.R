@@ -51,7 +51,7 @@ SlotDurationLMAC_stats <- calculate_stats_multiple_files(input_file_dir,
                                                          slot_durations,
                                                          "slot_duration")
 
-
+--------------------------------------------------------------------------------------------------
 # statystyki dla protokołu BMAC:
 # liczba sensoróW w sieci: od 5 do 50, krok 5
 # długość szczeliny: od 0.01 do 0.3s, krok 0.01s
