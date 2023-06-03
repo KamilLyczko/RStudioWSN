@@ -56,7 +56,15 @@ save_df_list <- function(dfs_list,
 create_line_plot <- function(x_vector, y_vector, title="", x_label = "", y_label = "") {
   ggplot(data = data.frame(x = x_vector, y = y_vector), aes(x, y)) + 
     geom_line() + geom_point() +
-    scale_x_continuous(breaks = x_vector) +
+    scale_x_continuous(guide = x_vector) +
+    labs(title = title, x = x_label, y = y_label)
+}
+
+# funkcja generuje wykres liniowy dla wektorów zawartych w ramce danych
+create_line_plot_from_df <- function(df, title="", x_label = "", y_label = "") {
+  ggplot(data = df, aes(as.numeric(df[[1]]), as.numeric(df[[2]]))) + 
+    geom_line() + geom_point() +
+    scale_x_continuous(breaks = df[[1]]) +
     labs(title = title, x = x_label, y = y_label)
 }
 
