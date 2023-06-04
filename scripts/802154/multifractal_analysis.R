@@ -37,6 +37,9 @@ app2_comp_plot_range2 <- create_multiple_multifractal_spectrum_plot(
   "Zestawienie widm multifraktalnych dla ruchu aplikacji nr 2")
 plot(app2_comp_plot_range2)
 
+alpha_ranges_app2 <- get_alpha_range(app2_spectrums, network_sizes)
+save_data(alpha_ranges_app2, "data_sheets/4_802154/results/multifractal/alpha_ranges_app2.csv")
+
 # aplikacja nr 3
 app3_spectrums <- get_multifractal_spectrums_for_list(app3_ts_dfs)
 app3_comp_plot <- create_multiple_multifractal_spectrum_plot(
@@ -54,6 +57,9 @@ app3_comp_plot_range2 <- create_multiple_multifractal_spectrum_plot(
   network_sizes[9:16],
   "Zestawienie widm multifraktalnych dla ruchu aplikacji nr 3")
 plot(app3_comp_plot_range2)
+
+alpha_ranges_app3 <- get_alpha_range(app3_spectrums, network_sizes)
+save_data(alpha_ranges_app3, "data_sheets/4_802154/results/multifractal/alpha_ranges_app3.csv")
 
 # aplikacja nr 4
 app4_spectrums <- get_multifractal_spectrums_for_list(app4_ts_dfs)
@@ -73,6 +79,9 @@ app4_comp_plot_range2 <- create_multiple_multifractal_spectrum_plot(
   "Zestawienie widm multifraktalnych dla ruchu aplikacji nr 4")
 plot(app4_comp_plot_range2)
 
+alpha_ranges_app4 <- get_alpha_range(app4_spectrums, network_sizes)
+save_data(alpha_ranges_app4, "data_sheets/4_802154/results/multifractal/alpha_ranges_app4.csv")
+
 # aplikacja nr 5
 app5_spectrums <- get_multifractal_spectrums_for_list(app5_ts_dfs)
 app5_comp_plot <- create_multiple_multifractal_spectrum_plot(
@@ -90,3 +99,6 @@ app5_comp_plot_range2 <- create_multiple_multifractal_spectrum_plot(
   network_sizes[9:16],
   "Zestawienie widm multifraktalnych dla ruchu aplikacji nr 5")
 plot(app5_comp_plot_range2)
+
+alpha_ranges_app5 <- get_alpha_range(app5_spectrums, network_sizes)
+save_data(alpha_ranges_app5, "data_sheets/4_802154/results/multifractal/alpha_ranges_app5.csv")

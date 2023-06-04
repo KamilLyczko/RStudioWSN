@@ -156,10 +156,30 @@ create_multiple_multifractal_spectrum_plot <- function(spec_dfs_list,
                                          spec_dfs_list[[i]][[2]]))
   }
   colnames(long_df) <- c("size", "x", "y")
+  max_alfa <- round(max(long_df[[2]]), 1)
+  min_alfa <- round(min(long_df[[2]]), 1)
+  legend_colors <- c("blue", "blueviolet", "aquamarine", "green", "cornsilk", "deepskyblue",
+                     "deeppink", "darkslategrey", "darkorange", "darkkhaki", "brown", "azure3",
+                     "antiquewhite", "chartreuse4", "darkolivegreen1", "darksalmon")
+  leg_colors <- legend_colors[1:length(spec_dfs_list)]
   plot_obj <- ggplot() +
     geom_path(data = long_df,
-              aes(x = x, y = y, group = size, colour = factor(size))) +
+              aes(x = x, y = y, group = size, colour = factor(size)), size=1.3) +
     scale_color_discrete() +
+    scale_x_continuous(breaks = seq(min_alfa,max_alfa,0.1)) +
+    scale_color_manual(values = leg_colors) +
     labs(title = title, x = "α", y = "dim(α)", color = "Liczba sensorów:")
   return(plot_obj)
+}
+
+get_alpha_range <- function(spec_dfs_list, network_sizes) {
+  ranges_df <- data.frame(matrix(ncol = 3, nrow = 0))
+  for (i in 1:length(spec_dfs_list)) {
+    min_alpha <- round(min(spec_dfs_list[[i]]$alpha), 2)
+    max_alpha <- round(max(spec_dfs_list[[i]]$alpha), 2)
+    difference <- max_alpha - min_alpha
+    ranges_df <- rbind(ranges_df, c(network_sizes[i], min_alpha, max_alpha, difference))
+  }
+  colnames(ranges_df) <- c("network_size", "min_alpha", "max_alpha", "difference")
+  return(ranges_df)
 }
