@@ -73,6 +73,7 @@ BestSD_LMAC_small_stats <- calculate_stats_multiple_files_simple(
 # ------------------------------------------------------------------------------------------------
 # wizualizacje - porównanie wyników dla domyślnej i najlepszej wartości parametru
 
+# poprawność dostarczania pakietóW
 network_sizes <- seq(5, 20, 1)
 
 BMAC_SD_packets_received_summary <- data.frame(
@@ -117,6 +118,51 @@ DefaultSD_MAC_comparison_plots[[3]] <-
                                     "Protokoły:")
 
 display_plots(DefaultSD_MAC_comparison_plots)
+
+#zużycie energii
+
+BMAC_SD_energy_utilization_summary <- data.frame(
+  x = network_sizes,
+  "B-MAC - domyślna szczelina czasowa 0.1s" = DefaultBMAC_small_stats$total_energy_utilization,
+  "B-MAC - szczelina czasowa 0.04s" = BestSD_BMAC_small_stats$total_energy_utilization,
+  check.names = FALSE)
+
+XMAC_SD_energy_utilization_summary <- data.frame(
+  x = network_sizes,
+  "X-MAC - domyślna szczelina czasowa 1s" = DefaultXMAC_small_stats$total_energy_utilization,
+  "X-MAC - szczelina czasowa 0.07s" = BestSD_XMAC_small_stats$total_energy_utilization,
+  check.names = FALSE)
+
+LMAC_SD_energy_utilization_summary <- data.frame(
+  x = network_sizes,
+  "LMAC - domyślna szczelina czasowa 0.1s" = DefaultLMAC_small_stats$total_energy_utilization,
+  "LMAC - szczelina czasowa 0.05s" = BestSD_LMAC_small_stats$total_energy_utilization,
+  check.names = FALSE)
+
+DefaultSD_MAC_energy_comparison_plots <- list()
+
+DefaultSD_MAC_energy_comparison_plots[[1]] <-
+  create_multiple_line_plot_from_df(BMAC_SD_energy_utilization_summary,
+                                    "Porównanie zużycia energii - szczeliny czasowe B-MAC",
+                                    "liczba sensorów w sieci",
+                                    "całkowite zużycie energii [J]",
+                                    "Protokoły:")
+
+DefaultSD_MAC_energy_comparison_plots[[2]] <-
+  create_multiple_line_plot_from_df(XMAC_SD_energy_utilization_summary,
+                                    "Porównanie zużycia energii - szczeliny czasowe X-MAC",
+                                    "liczba sensorów w sieci",
+                                    "całkowite zużycie energii [J]",
+                                    "Protokoły:")
+
+DefaultSD_MAC_energy_comparison_plots[[3]] <-
+  create_multiple_line_plot_from_df(LMAC_SD_energy_utilization_summary,
+                                    "Porównanie zużycia energii - szczeliny czasowe L-MAC",
+                                    "liczba sensorów w sieci",
+                                    "poprawnie dostarczone pakiety [%]",
+                                    "Protokoły:")
+
+display_plots(DefaultSD_MAC_energy_comparison_plots)
 
 # ------------------------------------------------------------------------------------------------
 # wizualizacje - porównanie wyników niezawodności i zużycia zasobów energetycznych węzłów
